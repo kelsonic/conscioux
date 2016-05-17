@@ -1,0 +1,2 @@
+module CosmeticsReviewsHelper
+end

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_tag: MyString
+  brand: MyString
+  product_name: MyString
+  store: MyString
+  city: MyString
+  country: MyString
+  gender: MyString
+  cosmetics_review_title: MyString
+  cosmetics_review_body: MyString
+  user_id: 1
+
+two:
+  type_tag: MyString
+  brand: MyString
+  product_name: MyString
+  store: MyString
+  city: MyString
+  country: MyString
+  gender: MyString
+  cosmetics_review_title: MyString
+  cosmetics_review_body: MyString
+  user_id: 1

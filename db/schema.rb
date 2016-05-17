@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516175836) do
+ActiveRecord::Schema.define(version: 20160517184259) do
+
+  create_table "cosmetics_reviews", force: :cascade do |t|
+    t.string   "type_tag"
+    t.string   "brand"
+    t.string   "product_name"
+    t.string   "store"
+    t.string   "city"
+    t.string   "country"
+    t.string   "gender"
+    t.string   "cosmetics_review_title"
+    t.string   "cosmetics_review_body"
+    t.integer  "cosmetics_rating"
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

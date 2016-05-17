@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cosmetics Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type tag</th>
+      <th>Brand</th>
+      <th>Product name</th>
+      <th>Store</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Gender</th>
+      <th>Cosmetics review title</th>
+      <th>Cosmetics review body</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cosmetics_reviews.each do |cosmetics_review| %>
+      <tr>
+        <td><%= cosmetics_review.type_tag %></td>
+        <td><%= cosmetics_review.brand %></td>
+        <td><%= cosmetics_review.product_name %></td>
+        <td><%= cosmetics_review.store %></td>
+        <td><%= cosmetics_review.city %></td>
+        <td><%= cosmetics_review.country %></td>
+        <td><%= cosmetics_review.gender %></td>
+        <td><%= cosmetics_review.cosmetics_review_title %></td>
+        <td><%= cosmetics_review.cosmetics_review_body %></td>
+        <td><%= cosmetics_review.user_id %></td>
+        <td><%= link_to 'Show', cosmetics_review %></td>
+        <td><%= link_to 'Edit', edit_cosmetics_review_path(cosmetics_review) %></td>
+        <td><%= link_to 'Destroy', cosmetics_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cosmetics review', new_cosmetics_review_path %>

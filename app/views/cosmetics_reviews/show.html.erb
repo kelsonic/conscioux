@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type tag:</strong>
+  <%= @cosmetics_review.type_tag %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @cosmetics_review.brand %>
+</p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @cosmetics_review.product_name %>
+</p>
+
+<p>
+  <strong>Store:</strong>
+  <%= @cosmetics_review.store %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @cosmetics_review.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @cosmetics_review.country %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @cosmetics_review.gender %>
+</p>
+
+<p>
+  <strong>Cosmetics review title:</strong>
+  <%= @cosmetics_review.cosmetics_review_title %>
+</p>
+
+<p>
+  <strong>Cosmetics review body:</strong>
+  <%= @cosmetics_review.cosmetics_review_body %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cosmetics_review.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_cosmetics_review_path(@cosmetics_review) %> |
+<%= link_to 'Back', cosmetics_reviews_path %>
