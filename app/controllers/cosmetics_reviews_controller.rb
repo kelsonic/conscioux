@@ -1,6 +1,6 @@
 class CosmeticsReviewsController < ApplicationController
   before_action :set_cosmetics_review, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_user, except: [:show, :index]
   # GET /cosmetics_reviews
   # GET /cosmetics_reviews.json
   def index
@@ -69,6 +69,10 @@ class CosmeticsReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cosmetics_review_params
-      params.require(:cosmetics_review).permit(:type_tag, :brand, :product_name, :store, :city, :country, :gender, :cosmetics_review_title, :cosmetics_review_body, :user_id)
+      params.require(:cosmetics_review).permit(:type_tag, :brand, :product_name, :store, :city, :country, :gender, :cosmetics_review_title, :cosmetics_review_body, :user_id, :rating)
+    end
+    
+    def admin_user
+      redirect_to cosmetics_review_path unless current_user.admin?
     end
 end
