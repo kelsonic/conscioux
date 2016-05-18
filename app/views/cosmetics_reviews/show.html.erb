@@ -91,22 +91,12 @@
           <div class="widget recent"><!-- Recent Post Widget -->
             <h4>Recent Reviews</h4>
             <div class="widget-wrap">
-
-              <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
-                <h3 class="media-heading"><a href="#">Become The Best Fashion Designer</a></h3>
-              </div>
-
-              <div class="thumb-post"><!-- Thumbnail Post #2 -->
-                <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
-                <h3 class="media-heading"><a href="#">A Leader SHould be Willing To Take a Responsibility</a></h3>
-              </div>
-
-              <div class="thumb-post"><!-- Thumbnail Post #3 -->
-                <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
-                <h3 class="media-heading"><a href="#">A Guide To Taking Your Dreams</a></h3>
-              </div>
-
+              <% @cosmetics_reviews.each do |cosmetics_review| %>
+                <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                  <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                  <h3 class="media-heading"><%= link_to cosmetics_review.cosmetics_review_title, cosmetics_review %></h3>
+                </div>
+              <% end %>
             </div>
           </div>
         </div><!-- end sidebar -->

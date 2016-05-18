@@ -9,6 +9,8 @@ class CosmeticsReviewsController < ApplicationController
   # GET /cosmetics_reviews/1
   # GET /cosmetics_reviews/1.json
   def show
+    @cosmetics_review = CosmeticsReview.find(params[:id])
+    @cosmetics_reviews = CosmeticsReview.order("created_at DESC").limit(4).offset(1)
   end
 
   # GET /cosmetics_reviews/new
