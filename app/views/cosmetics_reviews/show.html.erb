@@ -25,8 +25,7 @@
                   <a href="#" class="meta-author"><%= @cosmetics_review.product_name %></a>
                   <a href="#" class="meta-cat"><%= @cosmetics_review.brand %></a>
                 </div>
-                
-                <img src="http://placehold.it/800x450" class="img-responsive" alt="image">
+                <%= image_tag(@cosmetics_review.image, class: "img-responsive") if @cosmetics_review.image? %>
               </div>
             </div><!-- end Page Basic Info (featured image, metas) -->
 
@@ -93,8 +92,12 @@
             <div class="widget-wrap">
               <% @cosmetics_reviews.each do |cosmetics_review| %>
                 <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                  <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
                   <h3 class="media-heading"><%= link_to cosmetics_review.cosmetics_review_title, cosmetics_review %></h3>
+                  <h5 class="media-heading"><%= link_to cosmetics_review.product_name, cosmetics_review %> by
+                  <%= link_to cosmetics_review.brand, cosmetics_review %></h5>
+                  <div class="hr-sidebar">
+                    <hr/>
+                  </div>
                 </div>
               <% end %>
             </div>
