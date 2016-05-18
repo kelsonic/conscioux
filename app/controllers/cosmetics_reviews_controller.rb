@@ -1,6 +1,6 @@
 class CosmeticsReviewsController < ApplicationController
   before_action :set_cosmetics_review, only: [:show, :edit, :update, :destroy]
-  before_action :require_user, except: [:show, :index]
+  before_action :require_user, only: [:new, :create]
   # GET /cosmetics_reviews
   # GET /cosmetics_reviews.json
   def index
