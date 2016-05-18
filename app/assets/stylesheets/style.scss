@@ -317,7 +317,7 @@ span.bolder {
     text-decoration: none;
     text-transform: uppercase;
 }
-.metas a.meta-author:before { content: ' By : ' }
+
 a.meta-cat {
     font-size: 18px;
     background: #333031;
@@ -646,7 +646,7 @@ Single Page
     padding-bottom: 0;
 }
 .blog-post .post-detail h2 {
-    color: #333031;
+    color: black;
     text-align: center;
 }
 .layout-one .blog-post a.meta-date {
@@ -731,7 +731,7 @@ a:hover span.pull-right.fa.fa-long-arrow-left {
     margin-bottom: 80px;
 }
 .layout-two .blog-post .post-detail {
-    color: #333031;
+    color: black;
     background: #f1f1f1;
     padding-bottom: 20px;
 }

@@ -1,54 +1,119 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Type tag:</strong>
-  <%= @cosmetics_review.type_tag %>
-</p>
+<div id="tf-page-header" class="layout-two text-center">
+  <div class="container">
+    <h5><em>Cosmetics Review</em></h5>
+    <hr>
+    <h2 class="text-uppercase"><%= @cosmetics_review.product_name %> by <%= @cosmetics_review.brand %></h2>
+  </div>
+</div>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @cosmetics_review.brand %>
-</p>
+<div id="tf-content" class="layout-two">
+  <div class="container">
+    <div class="row">
 
-<p>
-  <strong>Product name:</strong>
-  <%= @cosmetics_review.product_name %>
-</p>
+      <div class="col-md-8"> <!-- Left Content for Blog Posts -->
+        <div class="blog-post"> <!-- Blog Posts -->
+          
+          <!-- Page Basic Info (title, featured image, metas) -->
+          <div class="post-detail">
+            <a href="achives.html" class="meta-date"><span class="bolder"><%= @cosmetics_review.created_at.strftime("%d") %>
+            </span><%= @cosmetics_review.created_at.strftime("%b") %></a>
+            <h2><%= @cosmetics_review.cosmetics_review_title %></h2> <!-- Post Title-->
 
-<p>
-  <strong>Store:</strong>
-  <%= @cosmetics_review.store %>
-</p>
+              <div class="img-wrap"> <!-- Image Wrap -->
+                <div class="metas">
+                  <a href="#" class="meta-author"><%= @cosmetics_review.product_name %></a>
+                  <a href="#" class="meta-cat"><%= @cosmetics_review.brand %></a>
+                </div>
+                
+                <img src="http://placehold.it/800x450" class="img-responsive" alt="image">
+              </div>
+            </div><!-- end Page Basic Info (featured image, metas) -->
 
-<p>
-  <strong>City:</strong>
-  <%= @cosmetics_review.city %>
-</p>
+            <h5 class="text-center"><em> Bought at <%= @cosmetics_review.store %> in <%= @cosmetics_review.city %>, 
+            <%= @cosmetics_review.country %>.</em></h5><hr>
 
-<p>
-  <strong>Country:</strong>
-  <%= @cosmetics_review.country %>
-</p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @cosmetics_review.gender %>
-</p>
+            <div class="post-content"> <!-- Post Main Content -->
+              <%= @cosmetics_review.cosmetics_review_body %>
+            </div>
 
-<p>
-  <strong>Cosmetics review title:</strong>
-  <%= @cosmetics_review.cosmetics_review_title %>
-</p>
+            <ul class="list-inline social"><!-- Social Share -->
+              <li><%= link_to 'https://github.com/sanlouise' do %>
+                <i class="fa fa-facebook"></i>
+              <% end %></li>
+              
+              <li><%= link_to 'https://github.com/sanlouise' do %>
+                <i class="fa fa-pinterest"></i>
+              <% end %></li>
+              
+              <li><%= link_to 'https://github.com/sanlouise' do %>
+                <i class="fa fa-instagram"></i>
+              <% end %></li>
+    
+              <li><%= link_to 'https://github.com/sanlouise' do %>
+                <i class="fa fa-twitter"></i>
+              <% end %></li>
+            </ul>
+          </div><!-- end Blog Post -->
 
-<p>
-  <strong>Cosmetics review body:</strong>
-  <%= @cosmetics_review.cosmetics_review_body %>
-</p>
+          <div class="author-box"> <!-- About the Post Author -->
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="http://placehold.it/100x100" alt="..."> <!-- Author Image -->
+                </a>
+              </div>
+            <div class="media-body">
+            <h4 class="media-heading">Written by Jenn Pereia</h4> <!-- Author name -->
+            Fashion Designer Jenn Pereira,the owner of Pereira boutique and clothing lines, has previously exhibited in London, England, USA, Japan, Italy and Dubai, where her creationswas highly appreciated.
+            <br><a href="authors.html">More Posts From Jenn</a>
+            </div>
+          </div>
+        </div> <!-- end About the Post Author -->
+      </div><!-- End of Posts/Blogrol -->
 
-<p>
-  <strong>User:</strong>
-  <%= @cosmetics_review.user_id %>
-</p>
+
+      <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
+        <div class="sidebar"><!-- sidebar -->
+
+          <div class="widget search"><!-- Search Widget -->
+            <div class="widget-wrap">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div><!-- /input-group -->
+            </div>
+          </div>
+
+          <div class="widget recent"><!-- Recent Post Widget -->
+            <h4>Recent Reviews</h4>
+            <div class="widget-wrap">
+
+              <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                <h3 class="media-heading"><a href="#">Become The Best Fashion Designer</a></h3>
+              </div>
+
+              <div class="thumb-post"><!-- Thumbnail Post #2 -->
+                <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                <h3 class="media-heading"><a href="#">A Leader SHould be Willing To Take a Responsibility</a></h3>
+              </div>
+
+              <div class="thumb-post"><!-- Thumbnail Post #3 -->
+                <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                <h3 class="media-heading"><a href="#">A Guide To Taking Your Dreams</a></h3>
+              </div>
+
+            </div>
+          </div>
+        </div><!-- end sidebar -->
+      </div><!-- end Right content for sidebar and widget area-->
+    </div><!-- end Row -->
+  </div><!-- End Container -->
+</div>
 
 <%= link_to 'Edit', edit_cosmetics_review_path(@cosmetics_review) %> |
 <%= link_to 'Back', cosmetics_reviews_path %>
