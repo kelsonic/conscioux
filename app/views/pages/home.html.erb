@@ -1,93 +1,173 @@
-<div class ="home-bg"></div>
-<container>
+<div id="top-header">
+  <div class="container text-center">
+    <h1>Conscioux</h1>
+  </div>
+</div>
 
-  <div class="row">
-    <div class="col s12 center">
-      <%= image_tag("resized-villa.jpeg", class: "homepage-image") %>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="col s12 m6 offset-m3 center">
-      <div class="center home">
-        <hr />
-        <h3>Quote of the week</h3>
-        <p>"Never doubt that a small group of thoughtful, committed citizens can change the world; 
-        indeed, it's the only thing that ever has."</br> - Margaret Mead</p>
-        <hr />
+<!-- Header Sliders 
+====================================-->
+<div id="tf-sliders">
+  <div class="container"><!-- Container -->
+    <div id="header-slider" class="carousel slide layout-two" data-ride="carousel">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= image_tag("resized-villa.jpeg") %>
+          <div class="carousel-caption">
+            <a href="single-blog.html" class="btn btn-default tf-btn">Read This</a>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("resized-villa.jpeg") %>
+          <div class="carousel-caption">
+            <a href="single-blog.html" class="btn btn-default tf-btn">Read This</a>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("resized-villa.jpeg") %>
+          <div class="carousel-caption">
+            <a href="single-blog.html" class="btn btn-default tf-btn">Read This</a>
+          </div>
+        </div>
       </div>
+      </div>
+
+      <div class="row nomargin">
+        <div class="carousel-indicators">
+          <div class="col-md-4 nopadding">
+            <div class="thumb-block c1 active" data-target="#header-slider" data-slide-to="0" >
+              <h5>City Reviews</h5>
+              <hr>
+            </div>
+          </div>
+
+          <div class="col-md-4 nopadding">
+            <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
+              <h5>Luxury Eco-Friendly Cosmetics</h5>
+              <hr>
+            </div>
+          </div>
+
+          <div class="col-md-4 nopadding">
+            <div class="thumb-block c3" data-target="#header-slider" data-slide-to="2">
+              <h5>Lifestyle</h5>
+              <hr>
+            </div>
+          </div>
+
+        </div>
     </div>
-  </div>
-  
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="lineup">
-          <div id="effect-1" class="effects clearfix">
-            <div class="img">
-              <!--< link_to '/hair' do %>-->
-              <%= image_tag 'cosmetics/makeup-lips.jpg', class: "cosmetics-listing-image" %>
-                <div class="recipes-overlay">
-                  <a href="/makeup" class="expand">
-                    <div class="center">
-                      Makeup</a>
-                    </div>
-                  <a class="close-recipes-overlay hidden"></a>
+
+  </div><!-- End Container -->
+</div>
+
+<!-- Blog Body 
+====================================-->
+<div id="tf-content">
+  <div class="container"><!-- Container -->
+    <div class="row"><!-- Row -->
+
+      <div class="col-md-8"> <!-- Left Content for Blog Posts -->
+
+        <div class="post-block"> <!-- Post #1-->
+          <div class="post-detail">
+            <a href="archives.html" class="meta-date"><span class="bolder">23</span><br>April</a>
+              <h2><a href="single-blog.html">Become The Best Fashion Designer</a></h2> <!-- Post Title-->
+
+              <div class="img-wrap"> <!-- Image Wrap -->
+                <div class="metas">
+                  <a href="fashion.html" class="meta-cat">Fashion</a>
+                  <a href="authors.html" class="meta-author">Conscioux</a>
+                </div>
+                <img src="http://placehold.it/800x450" class="img-responsive" alt="image">
+              </div>
+
+              <p>You know you're destined to be a fashion designer if you: a) spent most of your childhood making clothes for your Barbie dolls instead of playing with your friends; b) read fashion magazines instead of your school books; c) ran a boutique out of your basement at age 10. In other words: if you want to be the next Yves Saint Laurent, it helps to be completely and utterly obsessed with fashion.</p>
+              <p>However, there are many aspects of the profession. Working as a fashion designer can just as well mean supervising a design team at a sportswear company as producing a label under your own name. Although the former career may not seem as glamorous as the latter, it certainly will make your life less stressful. To create your own label takes a lot of time, dedication and hard work. Not to mention living just above the poverty line for several years[...]</p>
+            </div>
+
+            <a href="single-blog.html" class="btn btn-default tf-btn txt-link">Continue Reading</a>
+          </div><!-- end Post #1-->
+
+
+              
+              
+          </div><!-- End of Posts/Blogrol -->
+
+
+          <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
+            <div class="sidebar"><!-- sidebar -->
+              <div class="widget social"><!-- Social Media Connection -->
+              <h4>Follow Us</h4>
+                <div class="widget-wrap">
+                  <ul class="list-inline social"><!-- Social Share -->
+                    <li><%= link_to 'https://github.com/sanlouise' do %>
+                      <i class="fa fa-facebook"></i>
+                    <% end %></li>
+                    
+                    <li><%= link_to 'https://github.com/sanlouise' do %>
+                      <i class="fa fa-pinterest"></i>
+                    <% end %></li>
+                    
+                    <li><%= link_to 'https://github.com/sanlouise' do %>
+                      <i class="fa fa-instagram"></i>
+                    <% end %></li>
+          
+                    <li><%= link_to 'https://github.com/sanlouise' do %>
+                      <i class="fa fa-twitter"></i>
+                    <% end %></li>
+                  </ul>
                 </div>
               </div>
-          </div>
-         <!--<end %>-->
-        </div>  
-    </div>
-    <div class="col s12 m4">
-      <div class="lineup">
-          <div id="effect-1" class="effects clearfix">
-            <div class="img">
-              <!--< link_to '/hair' do %>-->
-              <%= image_tag 'cosmetics/skin-care.jpg', class: "recipe-listing-image" %>
-                <div class="recipes-overlay">
-                  <a href="/skin-body" class="expand">
-                    <div class="center">
-                      Skin and Body</a>
-                    </div>
-                  <a class="close-recipes-overlay hidden"></a>
+
+              <div class="widget recent"><!-- Recent Post Widget -->
+              <h4>Recent Posts</h4>
+                <div class="widget-wrap">
+
+                  <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                    <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                    <h3 class="media-heading"><a href="#">Become The Best Fashion Designer</a></h3>
+                  </div>
+
+                  <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                    <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                    <h3 class="media-heading"><a href="#">Become The Best Fashion Designer</a></h3>
+                  </div>
+
+                  <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                    <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
+                    <h3 class="media-heading"><a href="#">Become The Best Fashion Designer</a></h3>
+                  </div>
+
                 </div>
               </div>
-            <!--< end %>-->
+            </div><!-- end sidebar -->
+          </div><!-- end Right content for sidebar and widget area-->
+
+      </div><!-- end Row -->
+  </div><!-- End Container -->
+</div>
+
+<!-- Footer
+====================================-->
+<div id="tf-footer">
+  <div class="container">
+      <div class="widget-instagram">
+          <h4>Conscioux on Instagram</h4>
+          <div class="widget-wrap">
+              <ul class="list-inline insta-photos">
+                  <li><a href="#"><img src="http://placehold.it/200x200" class="img-circle img-responsive" alt="Image"></a></li>
+                  <li><a href="#"><img src="http://placehold.it/200x200" class="img-circle img-responsive" alt="Image"></a></li>
+                  <li><a href="#"><img src="http://placehold.it/200x200" class="img-circle img-responsive" alt="Image"></a></li>
+                  <li><a href="#"><img src="http://placehold.it/200x200" class="img-circle img-responsive" alt="Image"></a></li>
+                  <li><a href="#"><img src="http://placehold.it/200x200" class="img-circle img-responsive" alt="Image"></a></li>
+                  <li><a href="#"><img src="http://placehold.it/200x200" class="img-circle img-responsive" alt="Image"></a></li>
+              </ul>
           </div>
-        </div>  
-    </div>
+      </div>
+  </div><!-- End Container -->
+</div>
+
+
     
-    <div class="col s12 m4">
-      <div class="lineup">
-          <div id="effect-1" class="effects clearfix">
-            <div class="img">
-              <!--< link_to '/hair' do %>-->
-              <%= image_tag 'cosmetics/hair.png', class: "recipe-listing-image" %>
-                <div class="recipes-overlay">
-                  <a href="/hair" class="expand">
-                    <div class="center">
-                      Hair Care</a>
-                    </div>
-                  <a class="close-recipes-overlay hidden"></a>
-                </div>
-              </div>
-            <!--< end %>-->
-          </div>
-        </div>  
-    </div>
-
-  <div class="row">
-    <div class="col s12 m12 center">
-      <div class="center home">
-        <hr />
-        <h3>Our Mission</h3>
-        <p>"Never doubt that a small group of thoughtful, committed citizens can change the world; 
-        indeed, it's the only thing that ever has."</br> - Margaret Mead</p>
-        
-        <hr />
-        
-      </div>
-    </div>
-  </div>
-
-</container>

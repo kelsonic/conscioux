@@ -1,25 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Conscioux</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-
-<header>
-</header>
+<html lang="en">
+<%= render 'layouts/head' %>
 <body>
-  <main>
-    <%= render 'layouts/nav' %>
-    <div class="container center">
-      <%= render 'layouts/notices' %>
-      <%= yield %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    </div>
-  </main>
+  <%= render 'layouts/nav' %>
+  <%= render 'layouts/notices' %>
+  <%= yield %>
 <%= render 'layouts/footer' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

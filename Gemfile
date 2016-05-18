@@ -27,6 +27,7 @@ gem 'fog', '1.36.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'will_paginate'
+gem 'font-awesome-sass', '~> 4.6.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
