@@ -102,11 +102,13 @@
               <% end %>
             </div>
           </div>
-        </div><!-- end sidebar -->
-      </div><!-- end Right content for sidebar and widget area-->
-    </div><!-- end Row -->
-  </div><!-- End Container -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+        
+<%= link_to 'Destroy', cosmetics_review, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Edit', edit_cosmetics_review_path(@cosmetics_review) %> |
 <%= link_to 'Back', cosmetics_reviews_path %>

@@ -622,7 +622,6 @@ ul.insta-photos li img:hover { opacity: 1 }
     text-align: center;
     background: #333031;
     color: #ffffff;
-    text-transform: uppercase;
 }
 a.top {
     background: #BE834A;
@@ -743,6 +742,7 @@ a:hover span.pull-right.fa.fa-long-arrow-left {
 #tf-page-header {
     background: #F1F1F1;
     padding: 2% 0;
+    margin-bottom: 35px;
 }
 #tf-page-header h5 { font-family: 'Playfair Display', serif }
 #tf-page-header h2 { letter-spacing: 10px }
