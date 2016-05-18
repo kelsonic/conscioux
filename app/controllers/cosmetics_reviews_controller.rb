@@ -60,6 +60,15 @@ class CosmeticsReviewsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def hair
+  end
+  
+  def makeup
+  end
+  
+  def bodybath
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

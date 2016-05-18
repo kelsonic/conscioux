@@ -1,0 +1,49 @@
+<div class="row text-center">
+  
+  <div id="tf-page-header" class="text-center">
+    <div class="container">
+      <h5><em>Exclusive and Eco-friendly</em></h5>
+      <hr>
+      <h2 class="text-uppercase">Cosmetics</h2>
+    </div>
+  </div>
+  
+  <div class="cosmetics-categories">
+    <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+          <%= image_tag("makeup.jpg", class: "img-responsive") %>
+            <div class="overlay">
+               <h2>Makeup</h2>
+               <a class="info" href="#">Go!</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+           <%= image_tag("body.jpg", class: "img-responsive") %>
+            <div class="overlay">
+               <h2>Body & Bath</h2>
+               <a class="info" href="#">Go!</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <%= image_tag("hair.jpg", class: "img-responsive") %>
+            <div class="overlay">
+               <h2>Hair</h2>
+               <a class="info" href="#">Go!</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="text-center col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+    <%= link_to 'New Cosmetics review', new_cosmetics_review_path %>
+  </div>
+</div>
