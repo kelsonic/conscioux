@@ -37,7 +37,19 @@
             <div class="post-content"> <!-- Post Main Content -->
               <%= @cosmetics_review.cosmetics_review_body %>
             </div>
-
+            
+            <div class="post-content"> <!-- Post Main Content -->
+               Price: <%= @cosmetics_review.price %>.
+               Website of <%= @cosmetics_review.brand %>: <%= @cosmetics_review.company_website %>
+             </div>
+             
+                       
+            <div class="embed-container"> 
+              <% if @cosmetics_review.video.present? %>
+                <%= embed(@cosmetics_review.video) %>
+            </div>
+            <% end %>
+             
             <ul class="list-inline social"><!-- Social Share -->
               <li><%= link_to 'https://github.com/sanlouise' do %>
                 <i class="fa fa-facebook"></i>
