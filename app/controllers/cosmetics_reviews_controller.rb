@@ -65,6 +65,7 @@ class CosmeticsReviewsController < ApplicationController
   end
   
   def makeup
+    @cosmetics_reviews = CosmeticsReview.select { |selected_review| selected_review.type_tag == 'Makeup' }
   end
   
   def bodybath

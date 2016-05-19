@@ -17,18 +17,19 @@
 </div>
     
 <div class="row text-center">
-  <% @cosmetics_reviews.each do |cosmetics_review| %>
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-
-      <div class="ih-item square effect10 bottom_to_top">
+  <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-10 col-sm-offset-1 col-xs-12">
+    <% @cosmetics_reviews.each do |cosmetics_review| %>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="ih-item square effect10 bottom_to_top">
           <%= link_to cosmetics_review do %>
             <%= image_tag("hair.jpg", class: "img") %>
             <div class="info">
               <h3><%= cosmetics_review.product_name %></h3>
-              <p><%= cosmetics_review.brand %> Rating</p>
+              <p><%= cosmetics_review.brand %></p>
             </div>
           <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
