@@ -10,29 +10,30 @@
 <div id="tf-content" class="layout-two">
   <div class="container">
     <div class="row">
-
       <div class="col-md-8"> <!-- Left Content for Blog Posts -->
         <div class="blog-post"> <!-- Blog Posts -->
           
           <!-- Page Basic Info (title, featured image, metas) -->
           <div class="post-detail">
-            <a href="achives.html" class="meta-date"><span class="bolder"><%= @cosmetics_review.created_at.strftime("%d") %>
-            </span><%= @cosmetics_review.created_at.strftime("%b") %></a>
+            <a href="achives.html" class="meta-date">
+              <span class="bolder">
+                <%= @cosmetics_review.created_at.strftime("%d") %>
+              </span>
+              <%= @cosmetics_review.created_at.strftime("%b") %>
+            </a>
             <h2><%= @cosmetics_review.cosmetics_review_title %></h2> <!-- Post Title-->
 
-              <div class="img-wrap"> <!-- Image Wrap -->
-                <div class="metas">
-                  <a href="#" class="meta-author"><%= @cosmetics_review.product_name %></a>
-                  <a href="#" class="meta-cat"><%= @cosmetics_review.brand %></a>
-                </div>
-                <%= image_tag(@cosmetics_review.image, class: "img-responsive") if @cosmetics_review.image? %>
+            <div class="img-wrap"> <!-- Image Wrap -->
+              <div class="metas">
+                <a href="#" class="meta-author"><%= @cosmetics_review.product_name %></a>
+                <a href="#" class="meta-cat"><%= @cosmetics_review.brand %></a>
               </div>
+              <%= image_tag(@cosmetics_review.image, class: "img-responsive") if @cosmetics_review.image? %>
+            </div>
             </div><!-- end Page Basic Info (featured image, metas) -->
 
             <h5 class="text-center"><em> Bought at <%= @cosmetics_review.store %> in <%= @cosmetics_review.city %>, 
             <%= @cosmetics_review.country %>.</em></h5><hr>
-
-
             <div class="post-content"> <!-- Post Main Content -->
               <%= @cosmetics_review.cosmetics_review_body %>
             </div>
@@ -90,18 +91,19 @@
           <div class="widget recent"><!-- Recent Post Widget -->
             <h4>Recent Reviews</h4>
             <div class="widget-wrap">
-              <% @cosmetics_reviews.each do |cosmetics_review| %>
+              <% @cosmetics_reviews.each do |review| %>
                 <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                  <h3 class="media-heading"><%= link_to cosmetics_review.cosmetics_review_title, cosmetics_review %></h3>
-                  <h5 class="media-heading"><%= link_to cosmetics_review.product_name, cosmetics_review %> by
-                  <%= link_to cosmetics_review.brand, cosmetics_review %></h5>
-                  <div class="hr-sidebar">
-                    <hr/>
-                  </div>
+                  <%= link_to review do %>
+                    <div class="info">
+                      <h3 class="media-heading"><%= review.cosmetics_review_title %></h3>
+                       <%= image_tag(review.image, class: "img-responsive") %>
+                    </div>
+                  <% end %>
                 </div>
               <% end %>
             </div>
           </div>
+            
         </div>
       </div>
     </div>

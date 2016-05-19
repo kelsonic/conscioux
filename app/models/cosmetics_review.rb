@@ -4,6 +4,10 @@ class CosmeticsReview < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   validate :image_size
   
+  def self.search(search)
+    where('product_name || brand LIKE ?', "%#{search}%")
+  end
+  
   private
   def image_size
     if image.size > 1.megabytes

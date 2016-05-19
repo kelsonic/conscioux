@@ -117,11 +117,13 @@
               
             <div class="widget search"><!-- Search Widget -->
               <div class="widget-wrap">
+                <%= form_tag(search_pages_path, role: "search") do %>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search Reviews">
+                  <%= text_field_tag :search_cosmetics, nil, placeholder: "Search members" %>
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
+                    <%= submit_tag "Search" %>
                   </span>
+                <% end %>
                 </div><!-- /input-group -->
               </div>
             </div>

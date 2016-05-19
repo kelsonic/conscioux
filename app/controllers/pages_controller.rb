@@ -9,5 +9,9 @@ class PagesController < ApplicationController
   
   def choose
   end
+  
+  def search
+    @cosmetics_reviews = CosmeticsReview.search(params[:search_cosmetics]).order("created_at DESC")
+  end
 
 end
