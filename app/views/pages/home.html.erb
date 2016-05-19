@@ -1,9 +1,3 @@
-<div id="top-header">
-  <div class="container text-center">
-    <h1 class="conscioux-title">Conscioux</h1>
-  </div>
-</div>
-
 <!-- Header Sliders 
 ====================================-->
 <div id="tf-sliders">
@@ -96,6 +90,8 @@
 
           <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
             <div class="sidebar"><!-- sidebar -->
+          
+            
               <div class="widget social"><!-- Social Media Connection -->
               <h4>Follow Us</h4>
                 <div class="widget-wrap">
@@ -118,14 +114,29 @@
                   </ul>
                 </div>
               </div>
+              
+            <div class="widget search"><!-- Search Widget -->
+              <div class="widget-wrap">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search Reviews">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                  </span>
+                </div><!-- /input-group -->
+              </div>
+            </div>
 
             <div class="widget recent"><!-- Recent Post Widget -->
               <h4>Recent Reviews</h4>
               <div class="widget-wrap">
-                <% @cosmetics_reviews.each do |cosmetics_review| %>
+                <% @cosmetics_reviews.each do |review| %>
                   <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                    <a href="#"><img src="http://placehold.it/800x300" class="img-responsive" alt="Image"></a>
-                    <h3 class="media-heading"><%= link_to cosmetics_review.cosmetics_review_title, cosmetics_review %></h3>
+                    <%= link_to review do %>
+                      <div class="info">
+                        <h3 class="media-heading"><%= review.cosmetics_review_title %></h3>
+                         <%= image_tag(review.image, class: "img-responsive") %>
+                      </div>
+                    <% end %>
                   </div>
                 <% end %>
               </div>
