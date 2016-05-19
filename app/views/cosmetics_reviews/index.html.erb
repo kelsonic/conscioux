@@ -10,16 +10,15 @@
 </div>
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-    <h1 class="text-center">All Conscioux Cosmetics Reviews</h1>
 
-    <%= link_to 'New Cosmetics review', new_cosmetics_review_path %>
+    <%= link_to 'Write New Cosmetics Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
   </div>
 </div>
     
 <div class="row text-center">
-  <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-10 col-sm-offset-1 col-xs-12">
+  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
     <% @cosmetics_reviews.each do |cosmetics_review| %>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+      <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-6 col-xs-8 col-xs-offset-1">
         <div class="ih-item square effect10 bottom_to_top">
           <%= link_to cosmetics_review do %>
             <%= image_tag("hair.jpg", class: "img") %>

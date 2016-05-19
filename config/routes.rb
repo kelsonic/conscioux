@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   
   get '/makeup', to: 'cosmetics_reviews#makeup' 
   get '/bodybath', to: 'cosmetics_reviews#bodybath' 
-  get '/hair', to: 'cosmetics_reviews#hair' 
+  get '/hair', to: 'cosmetics_reviews#hair'
+  
   
   
 end

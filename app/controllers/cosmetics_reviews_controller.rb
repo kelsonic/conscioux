@@ -62,6 +62,7 @@ class CosmeticsReviewsController < ApplicationController
   end
   
   def hair
+    @cosmetics_reviews = CosmeticsReview.select { |selected_review| selected_review.type_tag == 'Hair' }
   end
   
   def makeup
@@ -69,6 +70,7 @@ class CosmeticsReviewsController < ApplicationController
   end
   
   def bodybath
+    @cosmetics_reviews = CosmeticsReview.select { |selected_review| selected_review.type_tag == 'Body and Bath' }
   end
 
   private
