@@ -1,4 +1,3 @@
-
 <div id="tf-page-header" class="layout-two text-center">
   <div class="container">
     <h5><em>Cosmetics Review</em></h5>
@@ -54,12 +53,14 @@
           <!--End Price and Website-->
           
           <!--Youtube Video-->
+          <h5 class="text-center">
           <% if @cosmetics_review.video.present? %>
            <span class="bolder">Conscioux Video Review</span>
             <div class="embed-container"> 
               <%= embed(@cosmetics_review.video) %>
             </div>
           <% end %>
+          </h5>
           <!--End Youtube Video-->
           
           <!--Social Media Links-->
