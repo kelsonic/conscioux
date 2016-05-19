@@ -1,7 +1,26 @@
-<div>
-  <% @cosmetics_reviews.each do |review| %>
-    <div>
-      <%= review.product_name %>
+<div class="row text-center">
+  <div id="tf-page-header" class="text-center">
+    <div class="container">
+      <h5><em>Exclusive and Eco-friendly</em></h5>
+      <hr>
+      <h2 class="text-uppercase">Search Results</h2>
     </div>
-    <% end %>
+  </div>
+</div>
+
+
+<div class="row text-center">
+  <% @cosmetics_reviews.each do |review| %> 
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+      <div class="ih-item square effect10 bottom_to_top">
+        <%= link_to review do %>
+          <%= image_tag(review.image, class: "img") %>
+          <div class="info">
+            <h3><%= review.product_name %></h3>
+            <p><%= review.brand %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
