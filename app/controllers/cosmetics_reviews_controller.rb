@@ -1,5 +1,5 @@
 class CosmeticsReviewsController < ApplicationController
-  before_action :set_cosmetics_review, only: [:edit, :update, :destroy]
+  before_action :set_cosmetics_review, only: [:show, :edit, :update, :destroy]
 
   # GET /cosmetics_reviews
   # GET /cosmetics_reviews.json
