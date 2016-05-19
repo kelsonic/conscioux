@@ -81,7 +81,7 @@ class CosmeticsReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cosmetics_review_params
-      params.require(:cosmetics_review).permit(:type_tag, :brand, :product_name, :store, :city, :country, :gender, :cosmetics_review_title, :cosmetics_review_body, :user_id, :image, :rating, :price, :company_website, :video)
+      params.require(:cosmetics_review).permit(:type_tag, :brand, :product_name, :store, :city, :country, :gender, :cosmetics_review_title, :cosmetics_review_body, :user_id, :image, :rating, :price, :quantity, :company_website, :video)
     end
     
     def admin_user
