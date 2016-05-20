@@ -332,7 +332,7 @@ a.meta-author {
 }
 ul.list-inline.social { margin-right: -5px }
 ul.social {
-    background: #ffffff;
+    background: #333031 !important;
     padding: 2%;
     text-align: center;
 }
@@ -623,6 +623,7 @@ ul.insta-photos li img:hover { opacity: 1 }
     text-align: center;
     background: #333031;
     color: #ffffff;
+    margin-top: 20px !important;
 }
 a.top {
     background: #BE834A;
