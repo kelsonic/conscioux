@@ -34,7 +34,7 @@ a.active { color: #be834a }
 p {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 26px;
 }
 .clearfix:after {
@@ -639,7 +639,7 @@ a.top {
 /* =======================================
 Single Page
 ========================================*/
-#tf-content { padding-top: 60px }
+#tf-content { padding-top: 10px }
 #tf-content.blog { padding-top: 100px }
 .blog-post {
     border: 0;
@@ -745,7 +745,6 @@ a:hover span.pull-right.fa.fa-long-arrow-left {
 #tf-page-header {
     background: #F1F1F1;
     padding: 2% 0;
-    margin-bottom: 35px;
 }
 #tf-page-header h5 { font-family: 'Playfair Display', serif }
 #tf-page-header h2 { letter-spacing: 10px }
