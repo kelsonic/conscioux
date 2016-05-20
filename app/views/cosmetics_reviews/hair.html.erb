@@ -8,18 +8,41 @@
   </div>
 </div>
 
-<div class="row text-center">
-  <% @cosmetics_reviews.each do |review| %> 
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-      <div class="ih-item square effect10 bottom_to_top">
-        <%= link_to review do %>
-          <%= image_tag(review.image, class: "img") %>
-          <div class="info">
-            <h3><%= review.product_name %></h3>
-            <p><%= review.brand %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+<div id="vlamorous-content">
+  <div class="container"><!-- Container -->
+    <div class="row"><!-- Row -->
+      <div class="col-md-10 col-md-offset-1"> <!-- Left Content for Blog Posts -->
+        <div class="post-block"> <!-- Post #1-->
+          <div class="post-detail">
+            <div class="post-detail text-center">
+              <h4>Honest reviews about honest brands.</h4> 
+              <h5 class="uncondensed">Only vegan, organic products, that are not tested on animals.</h5>
+            </div>
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <%= link_to 'Read More', about_path, class: 'btn btn-default btn-block tf-btn color' %>
+              </div>
+            </div>
+          </div><!-- end Post #1-->
+        </div>
+        <div class="row">
+          <% @cosmetics_reviews.each do |review| %>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="ih-item square effect10 bottom_to_top">
+                  <%= link_to review do %>
+                    <%= image_tag(review.image, class: "img") %>
+                    <div class="info">
+                      <h3><%= review.product_name %></h3>
+                      <p><%= review.brand %></p>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            </div>
+          </div><!-- End of Posts/Blogrol -->
+        </div>
+      </div><!-- end Right content for sidebar and widget area-->
+    </div><!-- end Row -->
+  </div><!-- End Container -->
 </div>

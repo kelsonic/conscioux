@@ -20,23 +20,27 @@
               <h5 class="uncondensed">Only vegan, organic products, that are not tested on animals.</h5>
             </div>
             <div class="row">
-              <div class="col-col-md-10 col-sm-12 col-xs-12">
+              <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
                 <%= link_to 'Read More', about_path, class: 'btn btn-default btn-block tf-btn color' %>
               </div>
             </div>
           </div><!-- end Post #1-->
-
-          <% @cosmetics_reviews.each do |review| %> 
-              <div class="ih-item square effect10 bottom_to_top">
-                <%= link_to review do %>
-                  <%= image_tag(review.image, class: "img") %>
-                  <div class="info">
-                    <h3><%= review.product_name %></h3>
-                    <p><%= review.brand %></p>
-                  </div>
-                <% end %>
+        </div>
+        <div class="row">
+          <% @cosmetics_reviews.each do |review| %>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="ih-item square effect10 bottom_to_top">
+                  <%= link_to review do %>
+                    <%= image_tag(review.image, class: "img") %>
+                    <div class="info">
+                      <h3><%= review.product_name %></h3>
+                      <p><%= review.brand %></p>
+                    </div>
+                  <% end %>
+                </div>
               </div>
-          <% end %>
+            <% end %>
+            </div>
           </div><!-- End of Posts/Blogrol -->
         </div>
       </div><!-- end Right content for sidebar and widget area-->
