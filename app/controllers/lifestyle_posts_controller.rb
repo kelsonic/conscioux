@@ -70,7 +70,7 @@ class LifestylePostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lifestyle_post_params
-      params.require(:lifestyle_post).permit(:topic, :city, :country, :title, :body, :takeaways, :people, :image, :video, :user_id, :created_at)
+      params.require(:lifestyle_post).permit(:topic, :city, :country, :title, :body, :takeaways, :people, :image, :video, :user_id)
     end
     
 end
