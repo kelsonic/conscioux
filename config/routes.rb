@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :lifestyle_posts
   resources :cosmetics_reviews
   resources :contacts
   

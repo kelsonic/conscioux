@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @lifestyle_post.topic %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @lifestyle_post.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @lifestyle_post.country %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @lifestyle_post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @lifestyle_post.body %>
+</p>
+
+<p>
+  <strong>Takeaways:</strong>
+  <%= @lifestyle_post.takeaways %>
+</p>
+
+<p>
+  <strong>People:</strong>
+  <%= @lifestyle_post.people %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @lifestyle_post.image %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @lifestyle_post.video %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @lifestyle_post.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_lifestyle_post_path(@lifestyle_post) %> |
+<%= link_to 'Back', lifestyle_posts_path %>

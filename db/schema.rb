@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520112405) do
+ActiveRecord::Schema.define(version: 20160520132936) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,21 @@ ActiveRecord::Schema.define(version: 20160520112405) do
     t.string   "video"
     t.string   "quantity"
     t.string   "specific_type_tag"
+  end
+
+  create_table "lifestyle_posts", force: :cascade do |t|
+    t.string   "topic"
+    t.string   "city"
+    t.string   "country"
+    t.string   "title"
+    t.string   "body"
+    t.string   "takeaways"
+    t.string   "people"
+    t.string   "image"
+    t.string   "video"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
