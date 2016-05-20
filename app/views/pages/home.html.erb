@@ -83,6 +83,7 @@
   </div>
 </div>
 
+<% if @lifestyle_posts.any? %>
 <!-- Blog Body 
 ====================================-->
 <div id="tf-content" class="layout-two">
@@ -115,7 +116,7 @@
             <!--End Review Image and Tag Lines-->
             
             <!--Product Shop and Address-->
-            <h5 class="text-center"><em> Reviewed from <%= @lifestyle_post.city %> in <%= @lifestyle_post.city %>,
+            <h5 class="text-center"><em> Reviewed from <%= @lifestyle_post.city %>,
             <%= @lifestyle_post.country %>.</em></h5><hr>
     
             <!--Product Review Body-->
@@ -163,6 +164,12 @@
     </div><!-- end Row -->
   </div><!-- End Container -->
 </div>
+<% else %>
+
+No posts have been created.
+
+<% end %>
+
 
 
     
