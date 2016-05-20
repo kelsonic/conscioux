@@ -333,7 +333,6 @@ a.meta-author {
 ul.list-inline.social { margin-right: -5px }
 ul.social {
     background: #333031 !important;
-    padding: 2%;
     text-align: center;
 }
 ul.social li { margin: 2px }
@@ -623,7 +622,8 @@ ul.insta-photos li img:hover { opacity: 1 }
     text-align: center;
     background: #333031;
     color: #ffffff;
-    margin-top: 20px !important;
+    bottom: 0;
+
 }
 a.top {
     background: #BE834A;
@@ -737,7 +737,7 @@ a:hover span.pull-right.fa.fa-long-arrow-left {
 .layout-two .blog-post .post-detail {
     color: black;
     background: #f1f1f1;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
 }
 .layout-two .blog-post .post-detail h2 { text-align: left }
 /* Page Header */
