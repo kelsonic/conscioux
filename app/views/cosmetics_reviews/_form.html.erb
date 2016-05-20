@@ -19,8 +19,15 @@
       </div>
       
       <div class="form-group">
+        <%= f.label :specific_type_tag, "Specific Product Type" %>
+        <%= f.select :specific_type_tag, ['Facial Cream', 'Body Lotion', 'Hand Cream', 'Bath Oil', 'Body Oil', 'Shampoo', 'Conditioner', 'Hair Oil', 'Hair Mask', 'Hair Spray',
+        'Lipstick', 'Lipgloss', 'Bronzer', 'Foundation', 'BB Creme', 'Concealer', 'Highlighter', 'Eye Shadow', 
+        'Mascara', 'Eye Liner', 'Nail Polish', 'Powder', 'Eyebrow Makeup'], {}, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
         <%= f.label :gender, "Target Group" %>
-        <%= f.select :gender, ['Men', 'Women'], {}, class: 'form-control' %>
+        <%= f.select :gender, ['Women', 'Men'], {}, class: 'form-control' %>
       </div>
       
       <div class="form-group">
