@@ -14,21 +14,41 @@
     <%= link_to 'Write New Cosmetics Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
   </div>
 </div>
-    
-<div class="row text-center">
-  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
-    <% @cosmetics_reviews.each do |cosmetics_review| %>
-      <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-6 col-xs-8 col-xs-offset-1">
-        <div class="ih-item square effect10 bottom_to_top">
-          <%= link_to cosmetics_review do %>
-            <%= image_tag(cosmetics_review.image, class: "img") %>
-            <div class="info">
-              <h3><%= cosmetics_review.product_name %></h3>
-              <p><%= cosmetics_review.brand %></p>
+<div id="vlamorous-content">
+  <div class="container"><!-- Container -->
+    <div class="row"><!-- Row -->
+      <div class="col-md-10 col-md-offset-1"> <!-- Left Content for Blog Posts -->
+        <div class="post-block"> <!-- Post #1-->
+          <div class="post-detail">
+            <div class="post-detail text-center">
+              <h4>Honest reviews about honest brands.</h4> 
+              <h5 class="uncondensed">Only vegan, organic products, that are not tested on animals.</h5>
             </div>
-          <% end %>
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+                <%= link_to 'Read More', about_path, class: 'btn btn-default btn-block tf-btn color' %>
+              </div>
+            </div>
+          </div><!-- end Post #1-->
         </div>
-      </div>
-    <% end %>
-  </div>
+        <div class="row">
+          <% @cosmetics_reviews.each do |review| %>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <div class="ih-item square effect10 bottom_to_top">
+                  <%= link_to review do %>
+                    <%= image_tag(review.image, class: "img") %>
+                    <div class="info">
+                      <h3><%= review.product_name %></h3>
+                      <p><%= review.brand %></p>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            </div>
+          </div><!-- End of Posts/Blogrol -->
+        </div>
+      </div><!-- end Right content for sidebar and widget area-->
+    </div><!-- end Row -->
+  </div><!-- End Container -->
 </div>
