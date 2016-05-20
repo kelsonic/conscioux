@@ -13,5 +13,8 @@ class PagesController < ApplicationController
   def search
     @cosmetics_reviews = CosmeticsReview.search(params[:search_cosmetics]).order("created_at DESC")
   end
+  
+  def request_review
+  end
 
 end
