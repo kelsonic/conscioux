@@ -62,7 +62,6 @@
 
     <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
       <div class="sidebar"><!-- sidebar -->
-
         <div class="widget search"><!-- Search Widget -->
           <div class="widget-wrap">
             <div class="input-group">
@@ -74,25 +73,29 @@
           </div>
         </div>
   
-              <div class="widget recent"><!-- Recent Post Widget -->
-                <h4>Recent Reviews</h4>
-                <div class="widget-wrap">
-                  <% @lifestyle_posts.each do |lifestyle_post| %>
-                    <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                      <%= link_to lifestyle_post do %>
-                        <div class="info">
-                          <h3 class="media-heading"><%= lifestyle_post.title %></h3>
-                           <%= image_tag(lifestyle_post.image, class: "img-responsive") %>
-                        </div>
-                      <% end %>
-                    </div>
-                  <% end %>
-                </div>
+        <div class="widget recent"><!-- Recent Post Widget -->
+          <h4>Recent Reviews</h4>
+          <div class="widget-wrap">
+            <% @lifestyle_posts.each do |lifestyle_post| %>
+              <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                <%= link_to lifestyle_post do %>
+                  <div class="info">
+                    <h3 class="media-heading"><%= lifestyle_post.title %></h3>
+                     <%= image_tag(lifestyle_post.image, class: "img-responsive") %>
+                  </div>
+                <% end %>
               </div>
-            
-        </div><!-- end sidebar -->
+            <% end %>
+          </div>
+        </div>
+    
       </div><!-- end Right content for sidebar and widget area-->
     </div><!-- end Row -->
   </div><!-- End Container -->
 </div>
-<%= link_to 'New Lifestyle post', new_lifestyle_post_path %>
+
+<div class="text-center col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+  <%= link_to 'New Lifestyle post', new_lifestyle_post_path, class: 'btn btn-default btn-block tf-btn color' %>
+</div>
+
+

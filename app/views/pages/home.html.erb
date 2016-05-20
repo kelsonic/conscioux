@@ -85,66 +85,78 @@
 
 <!-- Blog Body 
 ====================================-->
-<div id="tf-content">
+<div id="tf-content" class="layout-two">
   <div class="container"><!-- Container -->
-    <div class="row"><!-- Row -->
+    <div class="row">
       <div class="col-md-8"> <!-- Left Content for Blog Posts -->
-        <div class="post-block"> <!-- Post #1-->
+        <div class="blog-post">
           <div class="post-detail">
-            <a href="archives.html" class="meta-date"><span class="bolder">23</span><br>April</a>
-              <h2><a href="single-blog.html">Become The Best Fashion Designer</a></h2> <!-- Post Title-->
+            
+            <!--Date of Review-->
+            <a href="achives.html" class="meta-date">
+              <span class="bolder">
+                <%= @lifestyle_post.created_at.strftime("%d") %>
+              </span>
+              <%= @lifestyle_post.created_at.strftime("%b") %>
+            </a>
+            <!--End Date of Review-->
+            <!--Review Title-->
+            
+            <h2><%= @lifestyle_post.title %></h2> <!-- Post Title-->
 
-              <div class="img-wrap"> <!-- Image Wrap -->
-                <div class="metas">
-                  <a href="fashion.html" class="meta-cat">Fashion</a>
-                  <a href="authors.html" class="meta-author">Conscioux</a>
-                </div>
-                <img src="http://placehold.it/800x450" class="img-responsive" alt="image">
+            <!--Review Image and Tag Lines-->
+            <div class="img-wrap">
+              <div class="metas">
+                <a href="#" class="meta-author"><%= @lifestyle_post.topic %></a>
+                <a href="#" class="meta-cat"><%= @lifestyle_post.city %></a>
               </div>
-
-              <p>You know you're destined to be a fashion designer if you: a) spent most of your childhood making clothes for your Barbie dolls instead of playing with your friends; b) read fashion magazines instead of your school books; c) ran a boutique out of your basement at age 10. In other words: if you want to be the next Yves Saint Laurent, it helps to be completely and utterly obsessed with fashion.</p>
-              <p>However, there are many aspects of the profession. Working as a fashion designer can just as well mean supervising a design team at a sportswear company as producing a label under your own name. Although the former career may not seem as glamorous as the latter, it certainly will make your life less stressful. To create your own label takes a lot of time, dedication and hard work. Not to mention living just above the poverty line for several years[...]</p>
+              <%= image_tag(@lifestyle_post.image, class: "img-responsive") if @lifestyle_post.image? %>
             </div>
+            <!--End Review Image and Tag Lines-->
+            
+            <!--Product Shop and Address-->
+            <h5 class="text-center"><em> Reviewed from <%= @lifestyle_post.city %> in <%= @lifestyle_post.city %>,
+            <%= @lifestyle_post.country %>.</em></h5><hr>
+    
+            <!--Product Review Body-->
+            <div class="post-content"> <!-- Post Main Content -->
+              <%= @lifestyle_post.body %>
+            </div>
+            <!-- End Blog Post -->
+          </div>
+        </div>
+      </div><!-- End Container -->
 
-            <a href="single-blog.html" class="btn btn-default tf-btn txt-link">Continue Reading</a>
-          </div><!-- end Post #1-->
+      <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
+        <div class="sidebar"><!-- sidebar -->
+          <div class="widget search"><!-- Search Widget -->
+            <div class="widget-wrap">
+              <%= form_tag(search_pages_path, role: "search") do %>
+              <div class="input-group">
+                <%= text_field_tag :search_cosmetics, nil, placeholder: "Search Reviews", class: "form-control" %>
+                <span class="input-group-btn">
+                <%= submit_tag "Search", class: "btn btn-default" %>
+                </span>
+              <% end %>
+              </div><!-- /input-group -->
+            </div>
+          </div>
 
-
-              
-              
-          </div><!-- End of Posts/Blogrol -->
-
-
-          <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
-            <div class="sidebar"><!-- sidebar -->
-              <div class="widget search"><!-- Search Widget -->
-                <div class="widget-wrap">
-                  <%= form_tag(search_pages_path, role: "search") do %>
-                  <div class="input-group">
-                    <%= text_field_tag :search_cosmetics, nil, placeholder: "Search Reviews", class: "form-control" %>
-                    <span class="input-group-btn">
-                    <%= submit_tag "Search", class: "btn btn-default" %>
-                    </span>
-                  <% end %>
-                  </div><!-- /input-group -->
-                </div>
-              </div>
-  
-              <div class="widget recent"><!-- Recent Post Widget -->
-                <h4>Recent Reviews</h4>
-                <div class="widget-wrap">
-                  <% @cosmetics_reviews.each do |review| %>
-                    <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                      <%= link_to review do %>
-                        <div class="info">
-                          <h3 class="media-heading"><%= review.cosmetics_review_title %></h3>
-                           <%= image_tag(review.image, class: "img-responsive") %>
-                        </div>
-                      <% end %>
+          <div class="widget recent"><!-- Recent Post Widget -->
+            <h4>Recent Reviews</h4>
+            <div class="widget-wrap">
+              <% @cosmetics_reviews.each do |review| %>
+                <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                  <%= link_to review do %>
+                    <div class="info">
+                      <h3 class="media-heading"><%= review.cosmetics_review_title %></h3>
+                       <%= image_tag(review.image, class: "img-responsive") %>
                     </div>
                   <% end %>
                 </div>
-              </div>
+              <% end %>
+            </div>
+          </div>
             
         </div><!-- end sidebar -->
       </div><!-- end Right content for sidebar and widget area-->

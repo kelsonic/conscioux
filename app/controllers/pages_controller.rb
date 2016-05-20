@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   
   def home
     @cosmetics_reviews = CosmeticsReview.order("created_at DESC").limit(3)
+    @lifestyle_post = LifestylePost.last
   end
   
   def about
