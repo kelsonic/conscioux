@@ -1,4 +1,3 @@
-
 <div class="row text-center">
   <div id="tf-page-header" class="text-center">
     <div class="container">
@@ -7,58 +6,15 @@
       <h2 class="text-uppercase">Cosmetics</h2>
     </div>
   </div>
-  
-  <div class="cosmetics-categories">
-    <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12">
-        <div class="hovereffect">
-          <%= image_tag("makeup.jpg", class: "img-responsive") %>
-            <div class="overlay">
-               <h2>Makeup</h2>
-               <a class="info" href="/makeup">Go!</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hovereffect">
-           <%= image_tag("body.jpg", class: "img-responsive") %>
-            <div class="overlay">
-               <h2>Body & Bath</h2>
-               <a class="info" href="/bodybath">Go!</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hovereffect">
-            <%= image_tag("hair.jpg", class: "img-responsive") %>
-            <div class="overlay">
-               <h2>Hair</h2>
-               <a class="info" href="/hair">Go!</a>
-            </div>
-        </div>
-    </div>
-  </div>
 </div>
-
-
-
-<div class="row">
-  <div class="text-center col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-    <%= link_to 'Write New Cosmetics Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
-  </div>
-</div>
-
 
 <div class="container"><!-- Container -->
   <div class="row"><!-- Row -->
-  
-
     <div class="col-md-10 col-md-offset-1"> <!-- About us content -->
       <div class="post-block"> 
-      <p class="cosmetics-explanation-title">Exclusive and Eco-friendly</p>
         <div class="post-detail">
           <p>You know you're destined to be a fashion designer if you: a) spent most of your childhood making clothes for your Barbie dolls instead of playing with your friends; b) read fashion magazines instead of your school books; c) ran a boutique out of your basement at age 10. In other words: if you want to be the next Yves Saint Laurent, it helps to be completely and utterly obsessed with fashion.</p>
+          
           <div class="row">
             
             <div class="col-md-6">
@@ -70,13 +26,55 @@
                 <h3>Animal-friendly</h3>
                 <p>Anyone who wants to start a blog can do so by becoming a member of a blogging website of their choice. Once they've become members, they automatically become a part of that particular blogging community.</p>
             </div>
+            
           </div>
-
-        <p>However, there are many aspects of the profession. Working as a fashion designer can just as well mean supervising a design team at a sportswear company as producing a label under your own name. Although the former career may not seem as glamorous as the latter, it certainly will make your life less stressful. To create your own label takes a lot of time, dedication and hard work. Not to mention living just above the poverty line for several years</p>
-        <%= link_to 'See All Cosmetics Reviews', cosmetics_reviews_path, class: 'btn btn-default btn-block tf-btn color' %>
+        </div>
       </div>
-    </div>
-  </div><!-- endAbout us content -->
-
+    </div><!-- endAbout us content -->
   </div><!-- end Row -->
 </div><!-- End Container -->
+ 
+ 
+<div class="row">
+  <div class="cosmetics-categories">
+    <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-6 col-xs-12">
+      <div class="hovereffect">
+      <%= image_tag("makeup.jpg", class: "img-responsive") %>
+        <div class="overlay">
+          <h2>Makeup</h2>
+          <a class="info" href="/makeup">Go!</a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+      <%= image_tag("body.jpg", class: "img-responsive") %>
+      <div class="overlay">
+        <h2>Body & Bath</h2>
+         <a class="info" href="/bodybath">Go!</a>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+      <%= image_tag("hair.jpg", class: "img-responsive") %>
+      <div class="overlay">
+        <h2>Hair</h2>
+         <a class="info" href="/hair">Go!</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="choose-cosmetics">
+  <div class="row">
+    <div class="text-center col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+      <%= link_to 'See All Cosmetics Reviews', cosmetics_reviews_path, class: 'btn btn-default btn-block tf-btn color' %>
+      <%= link_to 'Write New Cosmetics Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
+    </div>
+  </div>
+</div>
+
+
