@@ -10,6 +10,7 @@ class LifestylePostsController < ApplicationController
   # GET /lifestyle_posts/1
   # GET /lifestyle_posts/1.json
   def show
+    @lifestyle_posts = LifestylePost.order("created_at DESC").limit(6).offset(1)
   end
 
   # GET /lifestyle_posts/new
@@ -69,6 +70,7 @@ class LifestylePostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lifestyle_post_params
-      params.require(:lifestyle_post).permit(:topic, :city, :country, :title, :body, :takeaways, :people, :image, :video, :user_id)
+      params.require(:lifestyle_post).permit(:topic, :city, :country, :title, :body, :takeaways, :people, :image, :video, :user_id, :created_at)
     end
+    
 end

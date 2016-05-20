@@ -1,45 +1,98 @@
-<p id="notice"><%= notice %></p>
+<div id="tf-page-header" class="layout-two text-center">
+  <div class="container">
+    <h5><em>Ethical and Glamorous</em></h5>
+    <hr>
+    <h2 class="text-uppercase">Lifestyle</h2>
+  </div>
+</div>
 
-<h1>Listing Lifestyle Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>City</th>
-      <th>Country</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Takeaways</th>
-      <th>People</th>
-      <th>Image</th>
-      <th>Video</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div id="tf-content" class="layout-two">
+  <div class="container">
+    <div class="row">
+      <% @lifestyle_posts.each do |lifestyle_post| %>
+        <div class="col-md-8"> <!-- Left Content for Blog Posts -->
+          <div class="blog-post">
+            <div class="post-detail">
+              <!--Date of Review-->
+              <a href="achives.html" class="meta-date">
+                <span class="bolder">
+                  <%= lifestyle_post.created_at.strftime("%d") %>
+                </span>
+                <%= lifestyle_post.created_at.strftime("%b") %>
+              </a>
+              <!--End Date of Review-->
+              <!--Review Title-->
+              <h2><%= lifestyle_post.title %></h2> <!-- Post Title-->
+              
+              <!--Review Image and Tag Lines-->
+              <div class="img-wrap">
+                <div class="metas">
+                  <a href="#" class="meta-author"><%= lifestyle_post.topic %></a>
+                  <a href="#" class="meta-cat"><%= lifestyle_post.city %></a>
+                </div>
+                <%= image_tag(lifestyle_post.image, class: "img-responsive") if lifestyle_post.image? %>
+              </div>
+              <!--End Review Image and Tag Lines-->
+            </div>
+          
+          <!--Product Shop and Address-->
+          <h5 class="text-center"><em> Reviewed from <%= lifestyle_post.city %> in <%= lifestyle_post.city %>, 
+          <%= lifestyle_post.country %>.</em></h5><hr>
+          
+          <!--Product Review Body-->
+          <div class="post-content"> <!-- Post Main Content -->
+            <%= lifestyle_post.body %>
+          </div>
+          
+          <!--Youtube Video-->
+          <h5 class="text-center">
+            <% if lifestyle_post.video.present? %>
+             <span class="bolder">Conscioux Video Footage</span>
+              <div class="embed-container"> 
+                <%= embed(lifestyle_post.video) %>
+              </div>
+            <% end %>
+          </h5>
+          <!--End Youtube Video-->
+        <% end %> 
+        <!-- End Blog Post -->
+      </div>
+    </div><!-- End of Posts/Blogrol -->
 
-  <tbody>
-    <% @lifestyle_posts.each do |lifestyle_post| %>
-      <tr>
-        <td><%= lifestyle_post.topic %></td>
-        <td><%= lifestyle_post.city %></td>
-        <td><%= lifestyle_post.country %></td>
-        <td><%= lifestyle_post.title %></td>
-        <td><%= lifestyle_post.body %></td>
-        <td><%= lifestyle_post.takeaways %></td>
-        <td><%= lifestyle_post.people %></td>
-        <td><%= lifestyle_post.image %></td>
-        <td><%= lifestyle_post.video %></td>
-        <td><%= lifestyle_post.user_id %></td>
-        <td><%= link_to 'Show', lifestyle_post %></td>
-        <td><%= link_to 'Edit', edit_lifestyle_post_path(lifestyle_post) %></td>
-        <td><%= link_to 'Destroy', lifestyle_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
+      <div class="sidebar"><!-- sidebar -->
 
-<br>
-
+        <div class="widget search"><!-- Search Widget -->
+          <div class="widget-wrap">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+          </div>
+        </div>
+  
+              <div class="widget recent"><!-- Recent Post Widget -->
+                <h4>Recent Reviews</h4>
+                <div class="widget-wrap">
+                  <% @lifestyle_posts.each do |lifestyle_post| %>
+                    <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                      <%= link_to lifestyle_post do %>
+                        <div class="info">
+                          <h3 class="media-heading"><%= lifestyle_post.title %></h3>
+                           <%= image_tag(lifestyle_post.image, class: "img-responsive") %>
+                        </div>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            
+        </div><!-- end sidebar -->
+      </div><!-- end Right content for sidebar and widget area-->
+    </div><!-- end Row -->
+  </div><!-- End Container -->
+</div>
 <%= link_to 'New Lifestyle post', new_lifestyle_post_path %>
