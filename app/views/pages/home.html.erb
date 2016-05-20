@@ -102,28 +102,30 @@
             </a>
             <!--End Date of Review-->
             <!--Review Title-->
-            
-            <h2><%= @lifestyle_post.title %></h2> <!-- Post Title-->
-
-            <!--Review Image and Tag Lines-->
+            <%= link_to @lifestyle_post do %>
+              <h2><%= @lifestyle_post.title %></h2> <!-- Post Title-->
+            <% end %>
+              <!--Review Image and Tag Lines-->
             <div class="img-wrap">
               <div class="metas">
                 <a href="#" class="meta-author"><%= @lifestyle_post.topic %></a>
                 <a href="#" class="meta-cat"><%= @lifestyle_post.city %></a>
               </div>
-              <%= image_tag(@lifestyle_post.image, class: "img-responsive") if @lifestyle_post.image? %>
+              <%= link_to @lifestyle_post do %>
+                <%= image_tag(@lifestyle_post.image, class: "img-responsive") if @lifestyle_post.image? %>
+              <% end %>
             </div>
-            <!--End Review Image and Tag Lines-->
+              <!--End Review Image and Tag Lines-->
             
             <!--Product Shop and Address-->
             <h5 class="text-center"><em> Reviewed from <%= @lifestyle_post.city %>,
             <%= @lifestyle_post.country %>.</em></h5><hr>
-    
+            
             <!--Product Review Body-->
             <div class="post-content"> <!-- Post Main Content -->
               <%= @lifestyle_post.body %>
             </div>
-            <!-- End Blog Post -->
+          <!-- End Blog Post -->
           </div>
         </div>
       </div><!-- End Container -->
