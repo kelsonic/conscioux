@@ -5,6 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :cosmetics_reviews
-  has_many :lifestyle_posts
   
 end
