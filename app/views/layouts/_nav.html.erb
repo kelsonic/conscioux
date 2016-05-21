@@ -18,7 +18,6 @@
           <li><%= link_to "Lifestyle", "/lifestyle" %></li>
           <!--<li>< link_to "Lifestyle", "/lifestyle" %></li>-->
           <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Contact", new_contact_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'https://github.com/sanlouise' do %>
@@ -45,13 +44,13 @@
           <% if user_signed_in? %>
           
             <li class="dropdown">
-              <%= link_to 'Account', class: "dropdown-toggle", id: "user-profile", data:{toggle: 'dropdown'}, role: "button", "aria-expanded" => "false" do %>
+              <%= link_to '#', class: "dropdown-toggle", id: "user-profile", data:{toggle: 'dropdown'}, role: "button", "aria-expanded" => "false" do %>
                  <%= current_user.first_name %><b class="caret"></b>
               <% end %>
               <ul class="dropdown-menu" role="menu">
-                <% if current_user.profile %>
+                <% if current_user.profile.nil? %>
                   <li><%= link_to "Edit Profile", edit_user_profile_path(current_user) %></li>
-                  <li><%= link_to "View Profile", user_path(current_user) %></li>
+                  <li><%= link_to "View Profile", user_profile_path(current_user) %></li>
                 <% else %>
                   <li><%= link_to "Create Profile", new_user_profile_path(current_user) %></li>
                 <% end %>

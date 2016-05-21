@@ -172,22 +172,5 @@ No posts have been created.
 
 <% end %>
 
-<% if user_signed_in? %>
-      
-  <!--Left Box-->
-  <div class="col-md-4 col-md-offset-1 text-center well">
-    <h2>Your Profile</h2>
-    <!--View Profile-->
-    <% if current_user.profile %>
-      <p>Keep this up-to-date.</p>
-      <li><%= link_to "Edit Profile", edit_user_profile_path(current_user) %></li>
-      <li><%= link_to "View Profile", user_path(current_user) %></li>
-    <% else %>
-      <li><%= link_to "Create", new_user_profile_path(current_user) %></li>
-    <% end %>
-  </div>
-
-<% end %>
-
 
     

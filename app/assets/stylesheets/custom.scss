@@ -103,3 +103,14 @@ hr {
 .white {
   color: white !important;
 }
+
+.no-markup {
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.no-markup:hover {
+  text-decoration: none !important;
+  color: white !important;
+  background-color: none !important;
+}

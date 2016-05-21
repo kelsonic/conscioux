@@ -1,14 +1,19 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :only_current_user
+  before_action :authenticate_user!, only: [:new]
+  before_action :only_current_user, only: [:edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
   
   def new
     # form where a user can fill out their own profile.
     @profile = Profile.new
   end
   
+  def show
+  end
+  
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = session["warden.user.user.key"][1][0]
 
     respond_to do |format|
       if @profile.save
@@ -22,6 +27,12 @@ class ProfilesController < ApplicationController
   end
   
   def edit
+    unless current_user.profile.blank?
+      @profile = current_user.profile
+    else
+      flash[:notice] = "No profile exists for current user"
+      redirect_to root_path
+    end 
   end
   
   def update
@@ -39,6 +50,10 @@ class ProfilesController < ApplicationController
   private
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :image, :country, :city, :description, :contact_email)
+    end
+    
+    def set_profile
+      @profile = Profile.find(params[:user_id])
     end
     
     def only_current_user
