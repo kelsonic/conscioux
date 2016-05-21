@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          
   has_many :cosmetics_reviews
   
+  has_one :profile
+  
 end
