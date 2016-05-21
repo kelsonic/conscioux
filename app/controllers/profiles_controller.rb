@@ -4,35 +4,35 @@ class ProfilesController < ApplicationController
   
   def new
     # form where a user can fill out their own profile.
-    @user = User.find( params[:user_id] )
-    
     @profile = Profile.new
   end
   
   def create
-    @user = User.find( params[:user_id] )
-    @profile = @user.build_profile(profile_params)
-    if @profile.save
-      flash[:success] = "Profile Updated!"
-      redirect_to user_path( params[:user_id] )
-    else
-      render action: :new
+    @profile = Profile.new(profile_params)
+
+    respond_to do |format|
+      if @profile.save
+        format.html { redirect_to root_path, notice: 'Your profile was successfully created.' }
+        format.json { render :show, status: :created, location: @profile }
+      else
+        format.html { render :new }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
+      end
     end
   end
   
   def edit
-    @user = User.find( params[:user_id] )
-    @profile = @user.profile
   end
   
   def update
-    @user = User.find( params[:user_id] )
-    @profile = @user.profile
-    if @profile.update_attributes(profile_params)
-      flash[:success] = "Profile Updated!"
-      redirect_to user_path( params[:user_id] )
-    else
-      render action: :edit
+    respond_to do |format|
+      if @profile.update(profile_params)
+        format.html { redirect_to @profile, notice: 'Your profile was successfully updated.' }
+        format.json { render :show, status: :ok, location: @profile }
+      else
+        format.html { render :edit }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
+      end
     end
   end
   
@@ -45,4 +45,5 @@ class ProfilesController < ApplicationController
       @user = User.find( params[:user_id] )
       redirect_to(root_url) unless @user == current_user
     end
+    
 end
