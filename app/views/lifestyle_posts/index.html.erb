@@ -95,7 +95,11 @@
 </div>
 
 <div class="text-center col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-  <%= link_to 'New Lifestyle post', new_lifestyle_post_path, class: 'btn btn-default btn-block tf-btn color' %>
+  
+  <% if user_signed_in? %>
+    <%= link_to 'New Lifestyle post', new_lifestyle_post_path, class: 'btn btn-default btn-block tf-btn color' %>
+  <% end %>
+  
 </div>
 
 

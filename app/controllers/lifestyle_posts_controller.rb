@@ -1,5 +1,6 @@
 class LifestylePostsController < ApplicationController
   before_action :set_lifestyle_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /lifestyle_posts
   # GET /lifestyle_posts.json
