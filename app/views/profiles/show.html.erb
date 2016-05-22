@@ -2,6 +2,8 @@
   <div class="container">
     <h5><em>Hi there!</em></h5>
     <hr>
-    <h2 class="text-uppercase">About <%= @profile.user.first_name %></h2>
+    <h2 class="text-uppercase">Hey, I'm <%= @user.first_name %></h2>
   </div>
 </div>
+
+<%= @user.profile.description %>

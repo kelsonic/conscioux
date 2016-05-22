@@ -1,54 +1,141 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @lifestyle_post.topic %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @lifestyle_post.city %>
-</p>
+<div id="tf-page-header" class="layout-two text-center">
+  <div class="container">
+    <h5><em>Lifestyle Post</em></h5>
+    <hr>
+    <h2 class="text-uppercase">Our Honest Experience</h2>
+  </div>
+</div>
 
-<p>
-  <strong>Country:</strong>
-  <%= @lifestyle_post.country %>
-</p>
+<div id="tf-content" class="layout-two">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8"> <!-- Left Content for Blog Posts -->
+        <div class="blog-post">
+          <div class="post-detail">
+            
+            <!--Date of Review-->
+            <a href="achives.html" class="meta-date">
+              <span class="bolder">
+                <%= @lifestyle_post.created_at.strftime("%d") %>
+              </span>
+              <%= @lifestyle_post.created_at.strftime("%b") %>
+            </a>
+            <!--End Date of Review-->
+            
+            <!--Review Title-->
+            <h2><%= @lifestyle_post.topic %></h2> <!-- Post Title-->
+            
+            <!--Review Image and Tag Lines-->
+            <div class="img-wrap">
+              <div class="metas">
+                <a href="#" class="meta-author"><%= @lifestyle_post.city %></a>
+                <a href="#" class="meta-cat"><%= @lifestyle_post.country %></a>
+              </div>
+              <%= image_tag(@lifestyle_post.image, class: "img-responsive") if @lifestyle_post.image? %>
+            </div>
+            <!--End Review Image and Tag Lines-->
+          </div>
+          
+          <!--Product Shop and Address-->
+          <h5 class="text-center"><em> Experienced at <%= @lifestyle_post.city %>,
+          <%= @lifestyle_post.country %>.</em></h5><hr>
+          
+          <!--Product Review Body-->
+          <div class="post-content"> <!-- Post Main Content -->
+            <%= @lifestyle_post.body %>
+          </div>
+          
+          <!--Youtube Video-->
+          <h5 class="text-center">
+          <% if @lifestyle_post.video.present? %>
+           <span class="bolder">Conscioux Video Review</span>
+            <div class="embed-container"> 
+              <%= embed(@lifestyle_post.video) %>
+            </div>
+          <% end %>
+          </h5>
+          <!--End Youtube Video-->
+          
+          <!--Social Media Links-->
+          <ul class="list-inline social"><!-- Social Share -->
+            <li><%= link_to 'https://github.com/sanlouise' do %>
+              <i class="fa fa-facebook"></i>
+            <% end %></li>
+            
+            <li><%= link_to 'https://github.com/sanlouise' do %>
+              <i class="fa fa-pinterest"></i>
+            <% end %></li>
+            
+            <li><%= link_to 'https://github.com/sanlouise' do %>
+              <i class="fa fa-instagram"></i>
+            <% end %></li>
+  
+            <li><%= link_to 'https://github.com/sanlouise' do %>
+              <i class="fa fa-twitter"></i>
+            <% end %></li>
+          </ul>
+          <!--End Social Media Links-->
+        
+        <!-- End Blog Post -->
+        </div>
+        
+        <!--Author Information-->
+        <div class="author-box"> <!-- About the Post Author -->
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" src="http://placehold.it/100x100" alt="..."> <!-- Author Image -->
+              </a>
+            </div>
+          <div class="media-body">
+          <h4 class="media-heading">Reviewed by Jenn Pereia</h4> <!-- Author name -->
+          Fashion Designer Jenn Pereira,the owner of Pereira boutique and clothing lines, has previously exhibited in London, England, USA, Japan, Italy and Dubai, where her creationswas highly appreciated.
+          <br><a href="authors.html">More Posts From Jenn</a>
+          </div>
+        </div>
+      </div> <!-- end About the Post Author -->
+      
+    </div><!-- End of Posts/Blogrol -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @lifestyle_post.title %>
-</p>
+    <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
+      <div class="sidebar"><!-- sidebar -->
 
-<p>
-  <strong>Body:</strong>
-  <%= @lifestyle_post.body %>
-</p>
+        <div class="widget search"><!-- Search Widget -->
+          <div class="widget-wrap">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div><!-- /input-group -->
+          </div>
+        </div>
 
-<p>
-  <strong>Takeaways:</strong>
-  <%= @lifestyle_post.takeaways %>
-</p>
+        <div class="widget recent"><!-- Recent Post Widget -->
+          <h4>Recent Reviews</h4>
+          <div class="widget-wrap">
+            <% @lifestyle_posts.each do |review| %>
+              <div class="thumb-post"><!-- Thumbnail Post #1 -->
+                <%= link_to review do %>
+                  <div class="info">
+                    <h3 class="media-heading"><%= review.topic %></h3>
+                     <%= image_tag(review.image, class: "img-responsive") %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>People:</strong>
-  <%= @lifestyle_post.people %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @lifestyle_post.image %>
-</p>
-
-<p>
-  <strong>Video:</strong>
-  <%= @lifestyle_post.video %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @lifestyle_post.user_id %>
-</p>
-
+        
 <%= link_to 'Edit', edit_lifestyle_post_path(@lifestyle_post) %> |
 <%= link_to 'Back', lifestyle_posts_path %>

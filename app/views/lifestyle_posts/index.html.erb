@@ -25,15 +25,18 @@
               <!--End Date of Review-->
               
               <!--Review Title-->
-              <h2><%= lifestyle_post.title %></h2>
-              
+              <%= link_to @lifestyle_post do %>
+                <h2><%= lifestyle_post.title %></h2>
+              <% end %>
               <!--Review Image and Tag Lines-->
               <div class="img-wrap">
                 <div class="metas">
                   <a href="#" class="meta-author"><%= lifestyle_post.topic %></a>
                   <a href="#" class="meta-cat"><%= lifestyle_post.city %></a>
                 </div>
-                <%= image_tag(lifestyle_post.image, class: "img-responsive") if lifestyle_post.image? %>
+                <%= link_to @lifestyle_post do %>
+                  <%= image_tag(lifestyle_post.image, class: "img-responsive") if lifestyle_post.image? %>
+                <% end %>
               </div>
               <!--End Review Image and Tag Lines-->
           
@@ -44,17 +47,12 @@
               <!--Product Review Body-->
               <div class="post-content"> <!-- Post Main Content -->
                 <%= lifestyle_post.body %>
+                
+                <div class="text-center col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
+                  <%= link_to 'Read More', lifestyle_post_path(lifestyle_post), class: 'btn btn-default btn-block tf-btn color' %>
+                </div>
               </div>
-            
-              <!--Youtube Video-->
-              <h5 class="text-center">
-                <% if lifestyle_post.video.present? %>
-                 <span class="bolder">Conscioux Video Footage</span>
-                  <div class="embed-container"> 
-                    <%= embed(lifestyle_post.video) %>
-                  </div>
-                <% end %>
-              </h5>
+
             </div>  
           </div>
         </div> 

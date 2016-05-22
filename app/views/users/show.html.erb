@@ -1,1 +1,9 @@
-This is <%= @user.first_name %>'s page.
+<div id="tf-page-header" class="layout-two text-center">
+  <div class="container">
+    <h5><em>Hi there!</em></h5>
+    <hr>
+    <h2 class="text-uppercase">Hey, I'm <%= @user.first_name %></h2>
+  </div>
+</div>
+
+<%= @profile.description(current_user) %>
