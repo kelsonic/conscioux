@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :cosmetics_reviews
+  has_many :lifestyle_posts
   
   mount_uploader :image, ImageUploader
   validate :image_size

@@ -62,27 +62,6 @@
           <% end %>
           </h5>
           <!--End Youtube Video-->
-          
-          <!--Social Media Links-->
-          <ul class="list-inline social"><!-- Social Share -->
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-facebook"></i>
-            <% end %></li>
-            
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-pinterest"></i>
-            <% end %></li>
-            
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-instagram"></i>
-            <% end %></li>
-  
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-twitter"></i>
-            <% end %></li>
-          </ul>
-          <!--End Social Media Links-->
-        
         <!-- End Blog Post -->
         </div>
         
@@ -95,7 +74,7 @@
               </a>
             </div>
           <div class="media-body">
-          <h4 class="media-heading">Reviewed by Jenn Pereia</h4> <!-- Author name -->
+          <h4 class="media-heading"><%= @cosmetics_review.user.first_name %></h4> <!-- Author name -->
           Fashion Designer Jenn Pereira,the owner of Pereira boutique and clothing lines, has previously exhibited in London, England, USA, Japan, Italy and Dubai, where her creationswas highly appreciated.
           <br><a href="authors.html">More Posts From Jenn</a>
           </div>
@@ -139,8 +118,8 @@
     </div>
   </div>
 </div>
-
         
 <%= link_to 'Destroy', cosmetics_review_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Edit', edit_cosmetics_review_path(@cosmetics_review) %> |
+
 <%= link_to 'Back', cosmetics_reviews_path %>

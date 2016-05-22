@@ -27,7 +27,7 @@ class CosmeticsReviewsController < ApplicationController
   # POST /cosmetics_reviews.json
   def create
     @cosmetics_review = CosmeticsReview.new(cosmetics_review_params)
-
+    @cosmetics_review.user = current_user
     respond_to do |format|
       if @cosmetics_review.save
         format.html { redirect_to @cosmetics_review, notice: 'Cosmetics review was successfully created.' }
