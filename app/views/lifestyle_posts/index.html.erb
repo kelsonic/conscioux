@@ -6,6 +6,14 @@
   </div>
 </div>
 
+<div class="text-center col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+  
+  <% if user_signed_in? %>
+    <%= link_to 'New Lifestyle post', new_lifestyle_post_path, class: 'btn btn-default btn-block tf-btn color' %>
+  <% end %>
+  
+</div>
+
 
 <div id="tf-content" class="layout-two">
   <div class="container">
@@ -48,9 +56,11 @@
               <div class="post-content"> <!-- Post Main Content -->
                 <%= lifestyle_post.body %>
                 
-                <div class="text-center col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
-                  <%= link_to 'Read More', lifestyle_post_path(lifestyle_post), class: 'btn btn-default btn-block tf-btn color' %>
-                </div>
+                
+              </div>
+              
+              <div class="text-center col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
+                <%= link_to 'Read More', lifestyle_post_path(lifestyle_post), class: 'btn btn-default btn-block tf-btn color' %>
               </div>
 
             </div>  
@@ -59,16 +69,6 @@
       <% end %> 
     </div>
   </div>
-</div>
-
-
-
-<div class="text-center col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
-  
-  <% if user_signed_in? %>
-    <%= link_to 'New Lifestyle post', new_lifestyle_post_path, class: 'btn btn-default btn-block tf-btn color' %>
-  <% end %>
-  
 </div>
 
 
