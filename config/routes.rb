@@ -16,15 +16,12 @@ Rails.application.routes.draw do
   get '/hair', to: 'cosmetics_reviews#hair'
   
   devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :users, :only => [:show, :edit]
   
   resource :pages, only: [:index] do
     collection do
       post :search, to: 'pages#search'
     end
   end
-  
-  resources :users do
-    resource :profile
-  end
-  
+
 end

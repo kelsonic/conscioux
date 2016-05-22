@@ -5,6 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :cosmetics_reviews
-  has_one :profile
+  
+  mount_uploader :image, ImageUploader
+  validate :image_size
+  
+  private
+  def image_size
+    if image.size > 1.megabytes
+      errors.add(:image, "Should be less than 1MB")
+    end
+  end
   
 end

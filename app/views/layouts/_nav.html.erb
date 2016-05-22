@@ -48,12 +48,8 @@
                  <%= current_user.first_name %><b class="caret"></b>
               <% end %>
               <ul class="dropdown-menu" role="menu">
-                <% if current_user.profile.nil? %>
-                  <li><%= link_to "Edit Profile", edit_user_profile_path(current_user) %></li>
-                  <li><%= link_to "View Profile", user_profile_path(current_user) %></li>
-                <% else %>
-                  <li><%= link_to "Create Profile", new_user_profile_path(current_user) %></li>
-                <% end %>
+                  <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                  <li><%= link_to "View Profile", user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
               </ul>
