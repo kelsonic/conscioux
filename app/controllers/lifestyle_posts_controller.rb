@@ -27,7 +27,7 @@ class LifestylePostsController < ApplicationController
   # POST /lifestyle_posts.json
   def create
     @lifestyle_post = LifestylePost.new(lifestyle_post_params)
-
+    @lifestyle_post.user = current_user
     respond_to do |format|
       if @lifestyle_post.save
         format.html { redirect_to @lifestyle_post, notice: 'Lifestyle post was successfully created.' }

@@ -67,21 +67,25 @@
         
         <!--Author Information-->
         <div class="author-box"> <!-- About the Post Author -->
-          <div class="media">
-            <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="http://placehold.it/100x100" alt="..."> <!-- Author Image -->
-              </a>
+          <div class="media text-center">
+            <%= link_to @user do %>
+              <%= image_tag(@cosmetics_review.user.image, width: 150, height: 150, class: "img-responsive") %>
+            <% end %>
+            <div class="media-body">
+              <h4 class="media-heading">Reviewed by: <%= @cosmetics_review.user.first_name %></h4> <!-- Author name -->
+              <%= @cosmetics_review.user.description %>
+              
             </div>
-          <div class="media-body">
-          <h4 class="media-heading"><%= @cosmetics_review.user.first_name %></h4> <!-- Author name -->
-          Fashion Designer Jenn Pereira,the owner of Pereira boutique and clothing lines, has previously exhibited in London, England, USA, Japan, Italy and Dubai, where her creationswas highly appreciated.
-          <br><a href="authors.html">More Posts From Jenn</a>
+            <%= link_to "Back to All Reviews", cosmetics_reviews_path, class: "btn btn-xs btn-primary" %>  
+            <% if user_signed_in? && (current_user == @cosmetics_review.user || current_user.admin?) %>| 
+              <%= link_to "Edit this Review", edit_cosmetics_review_path(@cosmetics_review), class: "btn btn-xs btn-warning" %> |
+              <%= link_to "Delete this Review", cosmetics_review_path, method: :delete, 
+                                                  data: { confirm: "Are you sure you want to delete this review?" }, 
+                                                  class: "btn btn-xs btn-danger" %>
+            <% end %>
           </div>
-        </div>
-      </div> <!-- end About the Post Author -->
-      
-    </div><!-- End of Posts/Blogrol -->
+        </div> <!-- end About the Post Author -->
+      </div><!-- End of Posts/Blogrol -->
 
     <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
       <div class="sidebar"><!-- sidebar -->
@@ -118,8 +122,3 @@
     </div>
   </div>
 </div>
-        
-<%= link_to 'Destroy', cosmetics_review_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_cosmetics_review_path(@cosmetics_review) %> |
-
-<%= link_to 'Back', cosmetics_reviews_path %>
