@@ -6,10 +6,24 @@
   </div>
 </div>
 
-<%= @user.country %>
-
-
-<%= @user.first_name %>
-
-
-<%= image_tag(@user.image, class: "img-responsive") %>
+<div id="tf-content" class="about">
+  <div class="container"><!-- Container -->
+    <div class="row"><!-- Row -->
+      <div class="col-md-10 col-md-offset-1"> <!-- About us content -->
+        <div class="post-block"> 
+          <div class="post-detail text-center">
+            
+            <div class="text-center"> <!-- Image Wrap -->
+                <%= image_tag(@user.image, class: "img-responsive text-center") %>
+            </div>
+            
+            <h3>I currently live in <%= @user.city %>, <%= @user.country %>.</h3>
+            
+            <p><%= @user.description %></p>
+            
+          </div>
+        </div>
+      </div>
+    </div><!-- end Row -->
+  </div><!-- End Container -->
+</div>
