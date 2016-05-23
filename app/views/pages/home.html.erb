@@ -123,7 +123,7 @@
             
             <!--Product Review Body-->
             <div class="post-content"> <!-- Post Main Content -->
-              <%= @lifestyle_post.body %>
+              <%= truncate(@lifestyle_post.body, length: 400) %>
             </div>
           <!-- End Blog Post -->
           </div>

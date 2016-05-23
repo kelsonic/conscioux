@@ -53,7 +53,7 @@
             
               <!--Product Review Body-->
               <div class="post-content"> <!-- Post Main Content -->
-                <%= lifestyle_post.body %>
+                <%= truncate(lifestyle_post.body, length: 400) %>
               </div>
               
               <div class="text-center col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-12 col-xs-12">
