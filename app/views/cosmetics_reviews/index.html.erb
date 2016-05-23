@@ -1,5 +1,4 @@
 <div class="row text-center">
-  
   <div id="tf-page-header" class="text-center">
     <div class="container">
       <h5><em>Exclusive and Eco-friendly</em></h5>
@@ -8,15 +7,15 @@
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
-    
     <% if user_signed_in? %>
-      <%= link_to 'Write New Cosmetics Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
+      <%= link_to 'Write New Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
     <% end %>
-    
   </div>
 </div>
+
 <div id="vlamorous-content">
   <div class="container"><!-- Container -->
     <div class="row"><!-- Row -->
@@ -34,21 +33,33 @@
             </div>
           </div><!-- end Post #1-->
         </div>
+        
+
         <div class="row">
           <% @cosmetics_reviews.each do |review| %>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <div class="ih-item square effect10 bottom_to_top">
-                  <%= link_to review do %>
-                    <%= image_tag(review.image, class: "img") %>
-                    <div class="info">
-                      <h3><%= review.product_name %></h3>
-                      <p><%= review.brand %></p>
-                    </div>
-                  <% end %>
+            <%= link_to review do %>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+              <div class="cosmetics-review">
+
+                <div class="hidden-xs">
+                  <%= image_tag(review.image, width: 150, height: 150, class: "img", ) %>
+                </div>
+                
+                <div class="cosmetics-review-index">
+                  <h3 class="text-center"><%= review.product_name %></h3>
+                  <p>
+                  <ul class="cosmetics-review-index-ul"><li>Brand: <%= review.brand %></li>
+                  <li>Price: €<%= review.price %> per <%= review.quantity %></li></ul></p>
+                </div>
+                  
                 </div>
               </div>
+              <% end %>
             <% end %>
             </div>
+          </div><!-- End of Posts/Blogrol -->
+        </div>
+
           </div><!-- End of Posts/Blogrol -->
         </div>
       </div><!-- end Right content for sidebar and widget area-->
