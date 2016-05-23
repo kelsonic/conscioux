@@ -22,6 +22,7 @@
       <div class="col-md-10 col-md-offset-1"> <!-- Left Content for Blog Posts -->
         <div class="post-block"> <!-- Post #1-->
           <div class="post-detail">
+            
             <div class="post-detail text-center">
               <h4>Honest reviews about honest brands.</h4> 
               <h5 class="uncondensed">Only vegan, organic products, that are not tested on animals.</h5>
@@ -34,7 +35,6 @@
           </div><!-- end Post #1-->
         </div>
         
-
         <div class="row">
           <% @cosmetics_reviews.each do |review| %>
             <%= link_to review do %>
@@ -42,26 +42,20 @@
               <div class="cosmetics-review">
 
                 <div class="hidden-xs">
-                  <%= image_tag(review.image, width: 150, height: 150, class: "img", ) %>
+                  <%= image_tag(review.image, width: 200, height: 200, class: "img") %>
                 </div>
                 
                 <div class="cosmetics-review-index">
                   <h3 class="text-center"><%= review.product_name %></h3>
-                  <p>
-                  <ul class="cosmetics-review-index-ul"><li>Brand: <%= review.brand %></li>
-                  <li>Price: €<%= review.price %> per <%= review.quantity %></li>
-                  <li><%= rating_for review, "rating", :enable_half => true %></li></ul></p>
+                  <p><ul class="cosmetics-review-index-ul text-center"><li>Brand: <%= review.brand %></li>
+                    <li>Price: €<%= review.price %> per <%= review.quantity %></li>
+                    <li><%= rating_for review, "rating", :enable_half => true %></li></ul></p>
                 </div>
                   
-                </div>
               </div>
-              <% end %>
-            <% end %>
             </div>
-          </div><!-- End of Posts/Blogrol -->
-        </div>
-
-          </div><!-- End of Posts/Blogrol -->
+            <% end %>
+          <% end %>
         </div>
       </div><!-- end Right content for sidebar and widget area-->
     </div><!-- end Row -->

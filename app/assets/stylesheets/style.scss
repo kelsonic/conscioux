@@ -378,7 +378,7 @@ ul.social li a i:hover { background: #333031 }
 #tf-footer blockquote footer,
 .post-detail .img-wrap blockquote footer {
     font-style: italic;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 /* Youtube Post Type */
@@ -628,6 +628,7 @@ ul.insta-photos li img:hover { opacity: 1 }
     background: #333031;
     color: #ffffff;
     bottom: 0;
+    margin-top: 20px;
 
 }
 a.top {
