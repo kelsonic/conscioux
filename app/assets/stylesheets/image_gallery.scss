@@ -1,7 +1,6 @@
 .hovereffect {
   width: 300px;
   height: 100%;
-  float: left;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -25,8 +24,8 @@
 }
 
 .hovereffect img {
-  display: block;
-  position: relative;
+  // display: block;
+  // position: relative;
 }
 
 .hovereffect h2 {
