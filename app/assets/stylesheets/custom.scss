@@ -115,3 +115,16 @@ hr {
   color: white !important;
   background-color: none !important;
 }
+
+.cosmetics-button {
+  font-size: 25px;
+  padding: 10 10 10 10;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 0px;
+}
+
+.cosmetics-button:hover {
+  background: #BE834A;
+  border: 2px solid #BE834A;
+}

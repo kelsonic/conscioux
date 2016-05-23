@@ -1,6 +1,7 @@
 .hovereffect {
   width: 300px;
   height: 100%;
+  margin-left: 25px !important;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -10,11 +11,12 @@
 .hovereffect .overlay {
   width: 300px;
   height: 100%;
+  margin-left: 25px !important;
   position: absolute;
   overflow: hidden;
   top: 0;
   left: 0;
-  background-color: rgba(75,75,75,0.7);
+  background-color: rgba(75,75,75,0.8);
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -24,8 +26,8 @@
 }
 
 .hovereffect img {
-  // display: block;
-  // position: relative;
+  display: block;
+  position: relative;
 }
 
 .hovereffect h2 {
