@@ -49,7 +49,8 @@
                   <h3 class="text-center"><%= review.product_name %></h3>
                   <p>
                   <ul class="cosmetics-review-index-ul"><li>Brand: <%= review.brand %></li>
-                  <li>Price: €<%= review.price %> per <%= review.quantity %></li></ul></p>
+                  <li>Price: €<%= review.price %> per <%= review.quantity %></li>
+                  <li><%= rating_for review, "rating", :enable_half => true %></li></ul></p>
                 </div>
                   
                 </div>

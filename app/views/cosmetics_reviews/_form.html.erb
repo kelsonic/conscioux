@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@cosmetics_review, html: {multipart: true}) do |f| %>
-      <% if @cosmetics_review.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@cosmetics_review.errors.count, "error") %> prohibited this cosmetics_review from being saved:</h2>
+      <!--< if @cosmetics_review.errors.any? %>-->
+      <!--  <div id="error_explanation">-->
+      <!--    <h2><= pluralize(@cosmetics_review.errors.count, "error") %> prohibited this cosmetics_review from being saved:</h2>-->
     
-          <ul>
-          <% @cosmetics_review.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <!--    <ul>-->
+      <!--    < @cosmetics_review.errors.full_messages.each do |message| %>-->
+      <!--      <li><= message %></li>-->
+      <!--    < end %>-->
+      <!--    </ul>-->
+      <!--  </div>-->
+      <!--< end %>-->
       
       <div class="form-group">
         <%= f.label :type_tag, "Product Type" %>
