@@ -27,6 +27,8 @@ gem 'fog', '1.36.0'
 gem 'will_paginate'
 gem 'font-awesome-sass', '~> 4.6.2'
 
+gem 'ratyrate'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

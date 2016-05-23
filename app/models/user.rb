@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   validate :image_size
   
+  ratyrate_rater
+  
   private
   def image_size
     if image.size > 1.megabytes

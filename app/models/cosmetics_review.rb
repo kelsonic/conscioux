@@ -17,10 +17,10 @@ class CosmeticsReview < ActiveRecord::Base
   validates :quantity, presence: true
   
   def self.search(search)
-    
     where("product_name LIKE ? OR brand LIKE ? OR specific_type_tag LIKE?", "%#{search}%", "%#{search}%", "%#{search}%")
-  
   end
+  
+  ratyrate_rateable "rating"
   
   private
   def image_size
