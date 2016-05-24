@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/cosmetics', to: 'pages#choose'
   get '/lifestyle', to: 'lifestyle_posts#index'
   get '/request-review', to: 'pages#request_review'
+  get '/collaborate', to: 'pages#collaborate'
   
   get '/makeup', to: 'cosmetics_reviews#makeup' 
   get '/bodybath', to: 'cosmetics_reviews#bodybath' 

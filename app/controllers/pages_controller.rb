@@ -18,5 +18,8 @@ class PagesController < ApplicationController
   
   def request_review
   end
+  
+  def collaborate
+  end
 
 end
