@@ -95,14 +95,15 @@
 
     <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
       <div class="sidebar"><!-- sidebar -->
-
         <div class="widget search"><!-- Search Widget -->
           <div class="widget-wrap">
+            <%= form_tag(search_pages_path, role: "search") do %>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
+              <%= text_field_tag :search_cosmetics, nil, placeholder: "Search Reviews", class: "form-control" %>
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
+              <%= submit_tag "Search", class: "btn btn-default" %>
               </span>
+            <% end %>
             </div><!-- /input-group -->
           </div>
         </div>
