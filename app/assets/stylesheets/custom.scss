@@ -159,6 +159,19 @@ img {
     max-width: 100%;
 }
 
+// End cosmetics index listing
+
+// Dropdown menu cosmetics
+
+@media screen and (max-width: 480px) {
+  .dropdown-menu>li>a {
+    color: white !important;
+    text-align: center;
+  }
+};
+
+// End dropdown menu cosmetics
+
 
 
 
