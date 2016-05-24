@@ -44,14 +44,13 @@
           
           <!--Product Review Body-->
           <div class="post-content"> <!-- Post Main Content -->
-            <%= @cosmetics_review.cosmetics_review_body %>
+            <%= @cosmetics_review.cosmetics_review_body.html_safe %>
           </div>
             
           <!--Product Price and Company Website-->
           <div class="post-content"> <!-- Post Main Content -->
              
              Approximate Price: <%= @cosmetics_review.price %> euros for <%= @cosmetics_review.quantity %>.
-             
              
              <%= link_to @cosmetics_review.company_website do %>
                <p>Website of <%= @cosmetics_review.brand %></p>
