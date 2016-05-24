@@ -145,8 +145,6 @@ hr {
   color: white;
 }
 
-
-
 .cosmetics-review:hover {
   background: black;
 }
@@ -154,6 +152,11 @@ hr {
 .cosmetics-review-index-ul {
   list-style-type: none;
   padding: 0;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
 }
 
 
