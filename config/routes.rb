@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   get '/about', to: 'pages#about'
   get '/cosmetics', to: 'pages#choose'
-  get '/lifestyle', to: 'lifestyle_posts#index'
+  get '/blog', to: 'lifestyle_posts#index'
   get '/request-review', to: 'pages#request_review'
   get '/collaborate', to: 'pages#collaborate'
   

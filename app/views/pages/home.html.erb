@@ -6,46 +6,49 @@
 
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
-        <div class="item">
-          <%= image_tag("paris.jpg") %>
-          <div class="carousel-caption">
-            <a href="#" class="btn btn-default tf-btn">Coming Soon</a>
-          </div>
-        </div>
         <div class="item active">
           <%= image_tag("lipstick-girl.jpeg") %>
-          <div class="carousel-caption">
-            <a href="/cosmetics" class="btn btn-default tf-btn">Browse Cosmetics</a>
+          <div class="carousel-caption hidden-xs">
+            <div class="search-caption">Search Cosmetics</div>
+            <%= form_tag(search_pages_path, role: "search") do %>
+              <div class="input-group">
+                <%= text_field_tag :search_cosmetics, nil, placeholder: "Search brands or products", class: "form-control" %>
+                <span class="input-group-btn">
+                <%= submit_tag "Search", class: "btn btn-default" %>
+                </span>
+              <% end %>
+              </div><!-- /input-group -->
           </div>
         </div>
+        
         <div class="item">
           <%= image_tag("resized-villa.jpeg") %>
-          <div class="carousel-caption">
-            <a href="/" class="btn btn-default tf-btn">Coming Soon</a>
+          <div class="carousel-caption hidden-xs">
+            
+            <div class="search-caption">Search Cosmetics</div>
+            <%= form_tag(search_pages_path, role: "search") do %>
+              <div class="input-group">
+                <%= text_field_tag :search_cosmetics, nil, placeholder: "Search brands or products", class: "form-control" %>
+                <span class="input-group-btn">
+                <%= submit_tag "Search", class: "btn btn-default" %>
+                </span>
+              <% end %>
+              </div><!-- /input-group -->
           </div>
         </div>
-      </div>
-      </div>
+
 
       <div class="row nomargin">
-        <div class="carousel-indicators">
-          <div class="col-md-4 nopadding">
-            <div class="thumb-block c1 active" data-target="#header-slider" data-slide-to="0" >
-              <h5>City Reviews</h5>
-              <hr>
-            </div>
-          </div>
-
-          <div class="col-md-4 nopadding">
+          <div class="col-md-6 nopadding">
             <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
               <h5>Luxury Eco-Friendly Cosmetics</h5>
               <hr>
             </div>
           </div>
 
-          <div class="col-md-4 nopadding">
+          <div class="col-md-6 nopadding">
             <div class="thumb-block c3" data-target="#header-slider" data-slide-to="2">
-              <h5>Lifestyle</h5>
+              <h5>Blog</h5>
               <hr>
             </div>
           </div>
@@ -133,17 +136,6 @@
 
       <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
         <div class="sidebar"><!-- sidebar -->
-          <div class="widget search"><!-- Search Widget -->
-            <div class="widget-wrap">
-              <%= form_tag(search_pages_path, role: "search") do %>
-              <div class="input-group">
-                <%= text_field_tag :search_cosmetics, nil, placeholder: "Search Cosmetics", class: "form-control" %>
-                <span class="input-group-btn">
-                <%= submit_tag "Search", class: "btn btn-default" %>
-                </span>
-              <% end %>
-              </div><!-- /input-group -->
-            </div>
           </div>
 
           <div class="widget recent"><!-- Recent Post Widget -->

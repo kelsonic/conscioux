@@ -60,8 +60,9 @@
 	.navbar-default .navbar-toggle:hover, 
 	.navbar-default .navbar-toggle:focus{ background: transparent;}
 	.navbar-default .navbar-toggle {left: 45%;}
-	#header-slider .carousel-caption{
-		display: none;
+	#header-slider 
+	.carousel-caption{
+
 	}
 	.carousel-control .fa { top: 38% }
 	.youtube .metas a,
