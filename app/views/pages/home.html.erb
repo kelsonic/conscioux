@@ -1,5 +1,3 @@
-<!-- Header Sliders 
-====================================-->
 <div id="tf-sliders">
   <div class="container"><!-- Container -->
     <div id="header-slider" class="carousel slide layout-two" data-ride="carousel">
@@ -22,7 +20,7 @@
         </div>
         
         <div class="item">
-          <%= image_tag("resized-villa.jpeg") %>
+          <%= image_tag("lipstick-girl.jpeg") %>
           <div class="carousel-caption hidden-xs">
             
             <div class="search-caption">Search Cosmetics</div>
@@ -37,27 +35,29 @@
           </div>
         </div>
 
-
-      <div class="row nomargin">
+      <%= link_to cosmetics_reviews_path do %>
+        <div class="row nomargin">
           <div class="col-md-6 nopadding">
             <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
               <h5>Luxury Eco-Friendly Cosmetics</h5>
               <hr>
             </div>
           </div>
+        <% end %>
 
+        <%= link_to lifestyle_posts_path do %>
           <div class="col-md-6 nopadding">
             <div class="thumb-block c3" data-target="#header-slider" data-slide-to="2">
               <h5>Blog</h5>
               <hr>
             </div>
           </div>
+        <% end %>
         </div>
       </div>
     </div>
   </div><!-- End Container -->
 </div>
-
 
 <div id="vlamorous-content">
   <div class="container"><!-- Container -->
