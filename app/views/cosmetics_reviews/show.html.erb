@@ -74,12 +74,12 @@
         
         <div class="author-box"> <!-- About the Post Author -->
           <div class="media text-center">
-            <div class="col-md-5">
-              <%= link_to @user do %>
-                <%= image_tag(@cosmetics_review.user.image, width: 180, height: 150, class: "img-responsive") %>
+            <div class="col-md-4">
+              <%= link_to user_path(@cosmetics_review.user) do %>
+                <%= image_tag(@cosmetics_review.user.image, width: 150, height: 150, class: "img-responsive") %>
               <% end %>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
               <div class="media-body">
                 <h4 class="media-heading">
                   Reviewed by: <%= @cosmetics_review.user.first_name %></h4> <!-- Author name -->

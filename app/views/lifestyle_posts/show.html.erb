@@ -58,26 +58,6 @@
           <% end %>
           </h5>
           <!--End Youtube Video-->
-          
-          <!--Social Media Links-->
-          <ul class="list-inline social"><!-- Social Share -->
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-facebook"></i>
-            <% end %></li>
-            
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-pinterest"></i>
-            <% end %></li>
-            
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-instagram"></i>
-            <% end %></li>
-  
-            <li><%= link_to 'https://github.com/sanlouise' do %>
-              <i class="fa fa-twitter"></i>
-            <% end %></li>
-          </ul>
-          <!--End Social Media Links-->
         
         <!-- End Blog Post -->
         </div>
@@ -85,13 +65,16 @@
         <!--Author Information-->
         <div class="author-box"> <!-- About the Post Author -->
           <div class="media text-center">
-            <%= link_to @user do %>
-              <%= image_tag(@lifestyle_post.user.image, width: 180, height: 150, class: "img-responsive") %>
-            <% end %>
-            <div class="media-body">
-              <h4 class="media-heading">Reviewed by: <%= @lifestyle_post.user.first_name %></h4> <!-- Author name -->
-              <%= @lifestyle_post.user.description %>
-              
+            <div class="col-md-4">
+              <%= link_to user_path(@lifestyle_post.user) do %>
+                <%= image_tag(@lifestyle_post.user.image, width: 150, height: 150, class: "img-responsive") %>
+              <% end %>
+            </div>
+            <div class="col-md-8">
+              <div class="media-body">
+                <h4 class="media-heading">Reviewed by: <%= @lifestyle_post.user.first_name %></h4> <!-- Author name -->
+                <%= @lifestyle_post.user.description %>
+               </div> 
             </div>
             <%= link_to "Back to All Reviews", lifestyle_post_path, class: "btn btn-xs btn-primary" %>  
             <% if user_signed_in? && (current_user == @lifestyle_post.user || current_user.admin?) %>| 
@@ -140,7 +123,3 @@
     </div>
   </div>
 </div>
-
-        
-<%= link_to 'Edit', edit_lifestyle_post_path(@lifestyle_post) %> |
-<%= link_to 'Back', lifestyle_posts_path %>
