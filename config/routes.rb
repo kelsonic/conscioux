@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   post '/rate' => 'rater#create', :as => 'rate'
-  root 'pages#home'
+  root 'pages#under_construction'
+  
+  get '/', to: 'pages#under_construction'
   
   resources :lifestyle_posts
   resources :cosmetics_reviews

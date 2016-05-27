@@ -21,5 +21,8 @@ class PagesController < ApplicationController
   
   def collaborate
   end
+  
+  def under_construction
+  end
 
 end
