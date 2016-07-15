@@ -9,6 +9,7 @@
   </div>
 </div>
 
+
 <div id="tf-content" class="layout-two">
   <div class="container">
     <div class="row">
@@ -76,7 +77,7 @@
                 <%= @lifestyle_post.user.description %>
                </div> 
             </div>
-            <%= link_to "Back to All Reviews", lifestyle_post_path, class: "btn btn-xs btn-primary" %>  
+           
             <% if user_signed_in? && (current_user == @lifestyle_post.user || current_user.admin?) %>| 
               <%= link_to "Edit this Review", edit_lifestyle_post_path(@lifestyle_post), class: "btn btn-xs btn-warning" %> |
               <%= link_to "Delete this Review", lifestyle_post_path, method: :delete, 
@@ -85,7 +86,10 @@
             <% end %>
           </div>
         </div> <!-- end About the Post Author -->
-      
+        
+        <div class="text-center">    
+           <%= link_to "Back to All Reviews", lifestyle_post_path, class: "btn btn-xs tf-btn center" %> 
+        </div>
     </div><!-- End of Posts/Blogrol -->
 
     <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
