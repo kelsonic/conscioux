@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/hair', to: 'cosmetics_reviews#hair'
   
   devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :users, :only => [:show, :edit]
+  resources :users
   
   resource :pages, only: [:index] do
     collection do
