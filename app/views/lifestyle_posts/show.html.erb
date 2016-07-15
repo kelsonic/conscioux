@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <div id="tf-page-header" class="layout-two text-center">
   <div class="container">
     <h5><em>Lifestyle Post</em></h5>
@@ -41,8 +40,9 @@
           </div>
           
           <!--Product Shop and Address-->
-          <h5 class="text-center"><em> Experienced at <%= @lifestyle_post.city %>,
-          <%= @lifestyle_post.country %>.</em></h5><hr>
+          <h5 class="text-center"><em> Experienced in <%= @lifestyle_post.city %>,
+            <%= @lifestyle_post.country %>.
+          </em></h5><hr>
           
           <!--Product Review Body-->
           <div class="post-content"> <!-- Post Main Content -->
@@ -51,15 +51,14 @@
           
           <!--Youtube Video-->
           <h5 class="text-center">
-          <% if @lifestyle_post.video.present? %>
-           <span class="bolder">Conscioux Video Review</span>
-            <div class="embed-container"> 
-              <%= embed(@lifestyle_post.video) %>
-            </div>
-          <% end %>
+            <% if @lifestyle_post.video.present? %>
+             <span class="bolder">Conscioux Video Review</span>
+              <div class="embed-container"> 
+                <%= embed(@lifestyle_post.video) %>
+              </div>
+            <% end %>
           </h5>
           <!--End Youtube Video-->
-        
         <!-- End Blog Post -->
         </div>
         
@@ -75,7 +74,7 @@
               <div class="media-body">
                 <h4 class="media-heading">Reviewed by: <%= @lifestyle_post.user.first_name %></h4> <!-- Author name -->
                 <%= @lifestyle_post.user.description %>
-               </div> 
+              </div> 
             </div>
            
             <% if user_signed_in? && (current_user == @lifestyle_post.user || current_user.admin?) %>| 
@@ -90,21 +89,20 @@
         <div class="text-center">    
            <%= link_to "Back to All Reviews", lifestyle_post_path, class: "btn btn-xs tf-btn center" %> 
         </div>
-    </div><!-- End of Posts/Blogrol -->
+      </div><!-- End of Posts/Blogrol -->
 
-    <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
-      <div class="sidebar"><!-- sidebar -->
-
-        <div class="widget search"><!-- Search Widget -->
-          <div class="widget-wrap">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div><!-- /input-group -->
+      <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
+        <div class="sidebar"><!-- sidebar -->
+          <div class="widget search"><!-- Search Widget -->
+            <div class="widget-wrap">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+              </div><!-- /input-group -->
+            </div>
           </div>
-        </div>
 
         <div class="widget recent"><!-- Recent Post Widget -->
           <h4>Recent Reviews</h4>
@@ -120,8 +118,6 @@
               </div>
             <% end %>
           </div>
-        </div>
-            
         </div>
       </div>
     </div>
