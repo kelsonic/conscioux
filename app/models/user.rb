@@ -1,22 +1,23 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-         
-  has_many :cosmetics_reviews
-  has_many :lifestyle_posts
   
-  mount_uploader :image, ImageUploader
+  # Associations
+  has_many :reviews
+  has_many :posts
+  has_one :profile
+
+  # Validations  
   validate :image_size
-  
-  ratyrate_rater
+  validates :email, presence: true, uniqueness: {case_sensitive: false}, format: {with: /@/}
+  has_secure_password
+  validates :admin, inclusion: { [ true, false ] }
+
+  mount_uploader :image, ImageUploader
   
   private
-  def image_size
-    if image.size > 1.megabytes
-      errors.add(:image, "Should be less than 1MB")
+    def image_size
+      if image.size > 1.megabytes
+        errors.add(:image, "Should be less than 1MB")
+      end
     end
-  end
   
 end

@@ -16,8 +16,6 @@ gem 'fog', '1.36.0'
 gem 'will_paginate'
 gem 'font-awesome-sass', '~> 4.6.2'
 
-gem 'ratyrate'
-
 
 group :development, :test do
   gem 'byebug'

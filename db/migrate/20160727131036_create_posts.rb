@@ -1,16 +1,17 @@
-class CreateLifestylePosts < ActiveRecord::Migration
+class CreatePosts < ActiveRecord::Migration
   def change
-    create_table :lifestyle_posts do |t|
+    create_table :posts do |t|
+      t.belongs_to :user
+
       t.string :topic
       t.string :city
       t.string :country
       t.string :title
       t.string :body
       t.string :takeaways
-      t.string :people
+      t.string :interviewed_people
       t.string :image
       t.string :video
-      t.integer :user_id
 
       t.timestamps null: false
     end

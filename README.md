@@ -2,7 +2,7 @@
 
 Welcome to Conscioux - the ethical platform for finding luxury cosmetics.
 
-<a href="" alt="Conscioux.com"><center style="box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);">![Homepage](app/assets/images/readme.png)</center></a>
+<div style="box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);"><a href="http://conscioux.com" alt="Conscioux.com"><center>![Homepage](app/assets/images/readme.png)</center></a></div>
 
 ## Getting Started Locally
 
