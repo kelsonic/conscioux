@@ -6,6 +6,6 @@ class ContactMailer < ActionMailer::Base
     @email = email
     @comments = comments
     
-    mail(from: email, subject: 'Message via Vegalista')
+    mail(from: email, subject: 'Message from Conscioux')
   end
 end
