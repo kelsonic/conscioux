@@ -18,14 +18,15 @@ class ContactsController < ApplicationController
       Our team will get back to you as soon as possible."
     else
       redirect_to new_contact_path, notice: "Oops, an error occured. Are you sure you 
-      did not leave a field blank?"
+      didn't leave a field blank?"
     end
     
   end
     
   private
+
     def contact_params
-      # "white listing" these parameters
+      # "white listing" name, email, comments parameters
       params.require(:contact).permit(:name, :email, :comments)
     end
 end
