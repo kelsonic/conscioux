@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validate :image_size
   validates :email, presence: true, uniqueness: {case_sensitive: false}, format: {with: /@/}
   has_secure_password
-  validates :admin, inclusion: { [ true, false ] }
+  # TODO: admin validation
 
   mount_uploader :image, ImageUploader
   
