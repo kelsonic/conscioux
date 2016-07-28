@@ -1,16 +1,12 @@
 class PagesController < ApplicationController
   
   def home
-    @cosmetics_reviews = CosmeticsReview.order("created_at DESC").limit(3)
-    @lifestyle_posts = LifestylePost.all
-    @lifestyle_post = LifestylePost.last
+    @reviews = Review.order("created_at DESC").limit(3)
+    @posts = Post.order("created_at DESC").limit(3)
+    @featured_post = @posts.first
   end
   
   def about
-  end 
-  
-  def search
-    @cosmetics_reviews = CosmeticsReview.search(params[:search_cosmetics]).order("created_at DESC")
   end
 
 end
