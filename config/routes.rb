@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  # Refactored
   root 'pages#home'
 
   get '/about', to: 'pages#about'
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, except: [:index] do
+  resources :users do
     resources :profiles
   end
 
