@@ -4,9 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :category_id
 
       t.string :name
-      t.string :store
-      t.string :city
-      t.string :country
+      t.string :brand
       t.string :gender
       t.string :website
       t.string :image
