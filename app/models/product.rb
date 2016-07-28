@@ -7,9 +7,7 @@ class Product < ActiveRecord::Base
   # Validations
   validate :image_size
   validates :name, presence: true, length: {maximum: 150}
-  validates :store, presence: true, length: {maximum: 100}
-  validates :city, presence: true, format: {with: /[^0-9!@#$%^&*()]+/, message: 'No special characters'}, length: {maximum: 200}
-  validates :country, presence: true, format: {with: /[^0-9!@#$%^&*()]+/, message: 'No special characters'}, length: {maximum: 200}
+  validates :brand, presence: true, length: {maximum: 150}
   validates :gender, presence: true, inclusion: {['Male', 'Female', 'Male/Female']}
   validates :website, format: {with: VALID_URL_REGEX}
   validates :price, format: {with: /[^A-Za-z]/}
