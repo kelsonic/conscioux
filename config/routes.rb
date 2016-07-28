@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  
+
   root 'pages#home'
 
   get '/about', to: 'pages#about'
 
-  get '/contact', to: 'contacts#new'
+  resources :contacts, only: [:new]
 
   resources :categories do
     resources :products do
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users do
+  devise_for :users do
     resources :profiles
   end
 
