@@ -7,6 +7,9 @@ class CreateReviews < ActiveRecord::Migration
       t.string :title
       t.string :body
       t.float :rating
+      t.string :store
+      t.string :city
+      t.string :country
       t.string :image
       t.string :video
 

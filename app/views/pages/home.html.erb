@@ -6,74 +6,63 @@
       <div class="carousel-inner" role="listbox">
         <div class="item active">
           <%= image_tag("lipstick-girl.jpeg") %>
-          <div class="carousel-caption hidden-xs">
-            <div class="search-caption">Search Cosmetics</div>
-            <%= form_tag(search_pages_path, role: "search") do %>
-              <div class="input-group">
-                <%= text_field_tag :search_cosmetics, nil, placeholder: "Search brands or products", class: "form-control" %>
-                <span class="input-group-btn">
-                <%= submit_tag "Search", class: "btn btn-default" %>
-                </span>
-              <% end %>
-              </div><!-- /input-group -->
-          </div>
-        </div>
-        
-        <div class="item">
-          <%= image_tag("lipstick-girl.jpeg") %>
-          <div class="carousel-caption hidden-xs">
-            
-            <div class="search-caption">Search Cosmetics</div>
-            <%= form_tag(search_pages_path, role: "search") do %>
-              <div class="input-group">
-                <%= text_field_tag :search_cosmetics, nil, placeholder: "Search brands or products", class: "form-control" %>
-                <span class="input-group-btn">
-                <%= submit_tag "Search", class: "btn btn-default" %>
-                </span>
-              <% end %>
-              </div><!-- /input-group -->
-          </div>
-        </div>
+          
+          <!-- <div class="carousel-caption hidden-xs"> -->
+            <!-- <div class="search-caption">Search Cosmetics</div> -->
+              <!-- form tag -->
+                <!-- <div class="input-group"> -->
+                  <!-- search tag -->
+                  <!-- <div class="input-group-btn"> -->
+                    <!-- submit -->
+                  <!-- </div> -->
+                <!-- </div> -->
+              <!-- end form tag -->
+            <!-- </div> -->
+          <!-- </div> -->
 
-      <%= link_to cosmetics_reviews_path do %>
-        <div class="row nomargin">
-          <div class="col-md-6 nopadding">
-            <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
-              <h5>Luxury Eco-Friendly Cosmetics</h5>
-              <hr>
-            </div>
-          </div>
-        <% end %>
+          <%= link_to reviews_path do %>
+            <div class="row nomargin">
+              <div class="col-md-6 nopadding">
+                <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
+                  <h5>Luxury Eco-Friendly Cosmetics</h5>
 
-        <%= link_to lifestyle_posts_path do %>
-          <div class="col-md-6 nopadding">
-            <div class="thumb-block c3" data-target="#header-slider" data-slide-to="2">
-              <h5>Blog</h5>
-              <hr>
+                  <hr>
+
+                </div>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+
+          <%= link_to posts_path do %>
+            <div class="col-md-6 nopadding">
+              <div class="thumb-block c3" data-target="#header-slider" data-slide-to="2">
+                <h5>Blog</h5>
+
+                <hr>
+
+              </div>
+            </div>
+          <% end %>
+
         </div>
       </div>
     </div>
-  </div><!-- End Container -->
+  </div>
 </div>
 
 <div id="vlamorous-content">
-  <div class="container"><!-- Container -->
-    <div class="row"><!-- Row -->
-      <div class="col-md-8 col-md-offset-2"> <!-- Left Content for Blog Posts -->
-        <div class="post-block"> <!-- Post #1-->
-          <h3 class="media-heading">
-            Be Vlamorous
-          </h3>
-          <div class="post-detail text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="post-block">
 
+          <h3 class="media-heading">Be Vlamorous</h3>
+
+          <div class="post-detail text-center">
             <h4>Look and feel your best with ethical luxury cosmetics.</h4>
             <h4>Conscioux writes honest reviews about honest brands. We never compromise
             on quality.</h4>
             <h5>No animal testing & 100% vegan.</h5>
-            
           </div>
           
           <div class="row">
@@ -81,102 +70,81 @@
               <%= link_to 'Read More', about_path, class: 'btn btn-default btn-block tf-btn color' %>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<% if @lifestyle_posts.any? %>
-<!-- Blog Body 
-====================================-->
+  
+<!-- FEATURED BLOG POST -->
 <div id="tf-content" class="layout-two">
-  <div class="container"><!-- Container -->
+  <div class="container">
     <div class="row">
-      <div class="col-md-8"> <!-- Left Content for Blog Posts -->
-        <div class="blog-post">
-          <div class="post-detail">
+      <div class="col-md-8 blog-post post-detail">
+        
+        <!--Date of Review-->
+        <a href="achives.html" class="meta-date">
+          <span class="bolder">
+            <%= @featured_post.created_at.strftime("%d") %>
+          </span>
+          <%= @featured_post.created_at.strftime("%b") %>
+        </a>
+        
+        <!--Review Title-->
+        <h2><%= link_to @featured_post.title, @featured_post %></h2>
+
+
+        <div class="img-wrap">
+          <!--Review Tag Lines-->
+          <div class="metas">
+            <a href="#" class="meta-author"><%= @featured_post.topic %></a>
+            <a href="#" class="meta-cat"><%= @featured_post.city %></a>
+          </div>
+          
+          <!-- Review Image -->
+          <%= link_to(image_tag(@featured_post.image, class: "img-responsive"), @featured_post) if @featured_post.image? %>
+        </div>
             
-            <!--Date of Review-->
-            <a href="achives.html" class="meta-date">
-              <span class="bolder">
-                <%= @lifestyle_post.created_at.strftime("%d") %>
-              </span>
-              <%= @lifestyle_post.created_at.strftime("%b") %>
-            </a>
-            <!--End Date of Review-->
-            <!--Review Title-->
-            <%= link_to @lifestyle_post do %>
-              <h2><%= @lifestyle_post.title %></h2> <!-- Post Title-->
-            <% end %>
-              <!--Review Image and Tag Lines-->
-            <div class="img-wrap">
-              <div class="metas">
-                <a href="#" class="meta-author"><%= @lifestyle_post.topic %></a>
-                <a href="#" class="meta-cat"><%= @lifestyle_post.city %></a>
+        <!--Product Shop and Address-->
+        <h5 class="text-center"><em> Reviewed from <%= @featured_post.city %>,
+        <%= @featured_post.country %>.</em></h5>
+
+        <hr>
+            
+        <!--Product Review Body-->
+        <div class="post-content">
+          <%= truncate(@featured_post.body, length: 400) %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar and Widgets -->
+  <div class="col-md-4">
+    <div class="sidebar">
+    </div>
+
+    <div class="widget recent">
+      <h4>Recent Reviews</h4>
+      
+      <div class="widget-wrap">
+        <% @reviews.each do |review| %>
+          <div class="thumb-post">
+            <%= link_to review do %>
+              <div class="info">
+                <h3 class="media-heading"><%= review.title %></h3>
+
+                <%= image_tag(review.image, class: "img-responsive") %>
               </div>
-              <%= link_to @lifestyle_post do %>
-                <%= image_tag(@lifestyle_post.image, class: "img-responsive") if @lifestyle_post.image? %>
-              <% end %>
-            </div>
-              <!--End Review Image and Tag Lines-->
-            
-            <!--Product Shop and Address-->
-            <h5 class="text-center"><em> Reviewed from <%= @lifestyle_post.city %>,
-            <%= @lifestyle_post.country %>.</em></h5><hr>
-            
-            <!--Product Review Body-->
-            <div class="post-content"> <!-- Post Main Content -->
-              <%= truncate(@lifestyle_post.body, length: 400) %>
-            </div>
-          <!-- End Blog Post -->
+            <% end %>
           </div>
-        </div>
-      </div><!-- End Container -->
-
-      <div class="col-md-4"> <!-- Right content for sidebar and widget area-->
-        <div class="sidebar"><!-- sidebar -->
-          </div>
-
-          <div class="widget recent"><!-- Recent Post Widget -->
-            <h4>Recent Reviews</h4>
-            <div class="widget-wrap">
-              <% @cosmetics_reviews.each do |review| %>
-                <div class="thumb-post"><!-- Thumbnail Post #1 -->
-                  <%= link_to review do %>
-                    <div class="info">
-                      <h3 class="media-heading"><%= review.cosmetics_review_title %></h3>
-                       <%= image_tag(review.image, class: "img-responsive") %>
-                    </div>
-                  <% end %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-            
-        </div><!-- end sidebar -->
-      </div><!-- end Right content for sidebar and widget area-->
-    </div><!-- end Row -->
-  </div><!-- End Container -->
-</div>
-
-<% else %>
-
-<div id="tf-content" class="layout-two">
-  <div class="container"><!-- Container -->
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2"> <!-- Left Content for Blog Posts -->
-        <div class="blog-post">
-          <div class="post-detail text-center">
-          No posts have been created. Check in again soon!
-          </div>
-        </div>
+        <% end %>
       </div>
+
     </div>
   </div>
+
 </div>
-
-<% end %>
-
-
     

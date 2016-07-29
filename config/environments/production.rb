@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Devise Config
+  config.action_mailer.default_url_options = { host: 'http://conscioux.com', port: 3000 }
+
 end
