@@ -1,0 +1,34 @@
+<form id="contact-form" class="form">
+  <div class="row">
+    <%= form_for @contact do |f| %>
+      
+      <!-- Name -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+      </div>
+      
+      <!-- Email -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+      </div>
+      
+      <!-- Comments -->
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.label :comments, "Message" %>
+          <%= f.text_area :comments, rows: 6, class: 'form-control' %>
+         </div>
+      </div>
+       
+      <!-- Submit -->
+      <%= f.submit 'Send', class: 'btn btn-default btn-block tf-btn color' %>
+      
+    <% end %>
+  </div>
+</form>
