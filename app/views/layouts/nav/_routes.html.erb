@@ -1,0 +1,22 @@
+<ul class="nav navbar-nav">
+
+  <!-- Homepage -->
+  <li><%= link_to "Home", root_path %></li>
+
+  <!-- Categories -->
+  <li class="dropdown">
+    <%= link_to 'Cosmetics', categories_path, class: "dropdown-toggle", id: "user-profile", data:{toggle: 'dropdown'}, role: "button", "aria-expanded" => "false" %>
+    <ul class="dropdown-menu" role="menu">
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, category_path(category.id) %></li>
+      <% end %>
+    </ul>
+  </li>
+  
+  <!-- Blogs -->
+  <li><%= link_to "Blog", posts_path %></li>
+
+  <!-- About -->
+  <li><%= link_to "About", about_path %></li>
+
+</ul>
