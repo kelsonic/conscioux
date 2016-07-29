@@ -2,24 +2,13 @@
   <div class="container">
     <a href="#tf-menu" class="scroll top"><i class="fa fa-long-arrow-up"></i></a>
     
-    <ul class="list-inline social"><!-- Social Share -->
-      <li><%= link_to 'https://github.com/sanlouise' do %>
-        <i class="fa fa-facebook"></i>
-      <% end %></li>
-      
-      <li><%= link_to 'https://github.com/sanlouise' do %>
-        <i class="fa fa-pinterest"></i>
-      <% end %></li>
-      
-      <li><%= link_to 'https://github.com/sanlouise' do %>
-        <i class="fa fa-instagram"></i>
-      <% end %></li>
-  
-      <li><%= link_to 'https://github.com/sanlouise' do %>
-        <i class="fa fa-twitter"></i>
-      <% end %></li>
+    <ul class="list-inline social">
+      <%= render 'layouts/social_media' %>
     </ul>
     
-    <p class="copyright-txt">© 2016 Conscioux | All rights reserved | <%= link_to "Contact", new_contact_path, class: "no-markup" %></p>
+    <p class="copyright-txt">
+      © 2016 Conscioux | All rights reserved | <%= link_to "Contact", new_contact_path, class: "no-markup" %>
+    </p>
+
   </div>
 </nav>
