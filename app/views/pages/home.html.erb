@@ -20,7 +20,7 @@
             <!-- </div> -->
           <!-- </div> -->
 
-          <%= link_to reviews_path do %>
+          <%= link_to category_product_reviews_path(category_id: @featured_review.product.category.id, product_id: @featured_review.product.id) do %>
             <div class="row nomargin">
               <div class="col-md-6 nopadding">
                 <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
@@ -132,7 +132,7 @@
       <div class="widget-wrap">
         <% @reviews.each do |review| %>
           <div class="thumb-post">
-            <%= link_to review do %>
+            <%= link_to category_product_review_path(category_id: review.product.category.id, product_id: review.product.id, id: review.id) do %>
               <div class="info">
                 <h3 class="media-heading"><%= review.title %></h3>
 
