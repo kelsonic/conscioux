@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about'
 
-  resources :contacts, only: [:new]
+  resources :contacts, only: [:new, :create]
 
   resources :categories do
     resources :products do
