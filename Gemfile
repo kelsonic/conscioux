@@ -22,7 +22,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'faker'
+  gem 'faker', '~> 1.6.6'
+  gem 'rubocop'
 end
 
 group :production do
