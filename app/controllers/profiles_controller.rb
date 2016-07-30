@@ -1,5 +1,4 @@
-class ProfilesController < ApplicationController
-  
+class ProfilesController < ApplicationController  
   
   
   def show
