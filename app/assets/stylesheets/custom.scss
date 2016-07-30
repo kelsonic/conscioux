@@ -180,4 +180,11 @@ img {
 
 .back {
   margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.dropdown-menu a {
+  &:hover {
+    color: white !important;
+  }
 }
