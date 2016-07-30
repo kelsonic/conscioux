@@ -1,0 +1,7 @@
+<h1 class="text-center">New Product under <%= @category.name %> Category</h1>
+
+<%= render 'form' %>
+
+<div class="text-center back">
+  <%= link_to "Back to #{@category.name}", category_path(@category) %>
+</div>
