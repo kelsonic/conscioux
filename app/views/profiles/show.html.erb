@@ -1,0 +1,32 @@
+<div id="tf-page-header" class="layout-two text-center">
+  <div class="container">
+    <h5><em><%= @profile.first_name %> <%= @profile.last_name %></em></h5>
+    <hr>
+    <h2 class="text-uppercase">Hey, I'm <%= @profile.first_name %></h2>
+  </div>
+</div>
+
+<div id="tf-content" class="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="post-block text-center">
+          <div class="col-md-5">
+            <%= image_tag(@profile.image, class: 'img-responsive', alt: "#{@profile.first_name}'s profile picture") %>
+          </div>
+
+          <div class="col-md-7">
+            <h3>I currently live in <%= @profile.city %>, <%= @profile.country %></h3>
+            <p><%= @profile.bio %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tf-content" class="layout-two">
+  <div class="container">
+
+  </div>
+</div>
