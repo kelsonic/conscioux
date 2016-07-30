@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @cosmetics_review %> |
-<%= link_to 'Back', cosmetics_reviews_path %>
+<div class="text-center back">
+  <%= link_to 'View Review', @review %> |
+  <%= link_to 'Back to Categories', categories_path %>
+</div>
