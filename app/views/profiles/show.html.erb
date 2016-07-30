@@ -25,8 +25,56 @@
   </div>
 </div>
 
-<div id="tf-content" class="layout-two">
+<div id="tf-page-header" class="layout-two text-center">
   <div class="container">
-
+    <h5><em>Many more to come!</em></h5>
+    <hr>
+    <h2 class="text-uppercase"><%= @profile.first_name %>'s Posts</h2>
   </div>
+</div>
+
+<div id="tf-content" class="layout-two">
+  <% @profile.user.posts.each do |post| %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 blog-post post-detail">
+          
+          <!--Date of Review-->
+          <a href="achives.html" class="meta-date">
+            <span class="bolder">
+              <%= post.created_at.strftime("%d") %>
+            </span>
+            <%= post.created_at.strftime("%b") %>
+          </a>
+          
+          <!--Review Title-->
+          <h2><%= link_to post.title, post %></h2>
+
+
+          <div class="img-wrap">
+            <!--Review Tag Lines-->
+            <div class="metas">
+              <a href="#" class="meta-author"><%= post.topic %></a>
+              <a href="#" class="meta-cat"><%= post.city %></a>
+            </div>
+            
+            <!-- Review Image -->
+            <%= link_to(image_tag(post.image, class: "img-responsive"), post) if post.image? %>
+          </div>
+              
+          <!--Product Shop and Address-->
+          <h5 class="text-center"><em> Reviewed from <%= post.city %>,
+          <%= post.country %>.</em></h5>
+
+          <hr>
+              
+          <!--Product Review Body-->
+          <div class="post-content">
+            <%= truncate(post.body, length: 400) %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
