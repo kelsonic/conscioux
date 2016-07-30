@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: { registrations: 'registrations' }
-  resources :profiles
+  
+  resources :profiles, only: [:show, :edit, :update]
 
   resources :posts
 
