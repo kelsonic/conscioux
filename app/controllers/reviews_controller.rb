@@ -10,14 +10,15 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @review = Review.new
   end
 
   def edit
   end
 
   def create
-    @user = current_user
-    @review = @user.reviews.new(review_params)
+    @review = Product.find(params[:product_id]).reviews.new(review_params)
+    @review.user_id = current_user.id
 
     if @review.save
       redirect_to @review, notice: 'Review was created successfully.'
