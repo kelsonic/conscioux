@@ -10,9 +10,6 @@ gem 'jquery-rails'
 
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '0.4.0', group: :doc
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'fog', '1.36.0'
 gem 'will_paginate'
 gem 'font-awesome-sass', '~> 4.6.2'
 
