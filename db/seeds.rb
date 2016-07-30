@@ -5,7 +5,7 @@ gender = ['Male', 'Female']
 # CREATE CATEGORIES AND PRODUCTS
 product_images = ['Conditioner1.jpg', 'cream.jpg', 'cream2.jpg', 'cream3.jpg', 'cream4.jpg', 'lipgloss.jpg', 'mascara2.jpg', 'mascara3.jpg', 'test-eco-image.jpg']
 product_names = ['Facial Cream', 'Body Lotion', 'Bath Oil', 'Shampoo', 'Hair Oil', 'Hair Spray', 'Mascara', 'Foundation', 'Concealer', 'Powder', 'Eye Shadow', 'Eyebrow Makeup', 'Conditioner', 'Lipstick', 'Lipgloss', 'Eye Liner', 'Nail Polish', 'Bronzer', 'BB Creme', 'Hand Creme', 'Body Oil']
-
+post_topics = ['Yoga', 'Restaurant', 'Shop', 'Diet', 'Workout', 'Bar']
 
 categories = ['Makeup', 'Hair', 'Body & Bath']
 
@@ -49,7 +49,7 @@ user.profile = profile
 
 user.posts.create!(
 	title: "This lipstick makes you feel like #{Faker::Space.star}!",
-	topic: "Fashion",
+	topic: post_topics.sample,
 	city: Faker::Address.city,
 	country: Faker::Address.country,
 	body: ("This lipstick ensures that it won't hurt any #{Faker::Pokemon.name}s or #{Faker::Pokemon.name}s. " * 60),
