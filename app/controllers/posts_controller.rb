@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def show
   end
@@ -40,12 +40,6 @@ class PostsController < ApplicationController
   end
 
   private
-
-    def require_admin
-      unless current_user.is_admin?
-        redirect_to root_path, flash: {error: 'You are not authorized to meddle with the categories.'}
-      end
-    end
 
     def set_post
       @post = Post.find(params[:id])

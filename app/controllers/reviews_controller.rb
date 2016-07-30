@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def show
   end
@@ -40,12 +40,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-  
-    def require_admin
-      unless current_user.is_admin?
-        redirect_to root_path, flash: {error: 'You are not authorized to meddle with the categories.'}
-      end
-    end
 
     def set_review
       @review = Review.find(params[:id])

@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<%= render 'layouts/head' %>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
 <body>
-  <%= render 'layouts/nav' %>
-  <%= render 'layouts/notices' %>
-  <%= yield %>
+  <header>
+    <%= render 'layouts/nav/nav' %>
+  </header>
+
+  <main>
+    <%= render 'layouts/notices' %>
+    <%= yield %>
+  </main>
+
   <%= render 'layouts/footer' %>
+  
   <%= javascript_include_tag 'application' %>
 </body>
 </html>

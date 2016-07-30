@@ -1,0 +1,31 @@
+<div class="row text-center">
+  <div id="tf-page-header" class="text-center">
+    <div class="container">
+      <h5><em>Exclusive and Eco-friendly</em></h5>
+      <hr>
+      <h2 class="text-uppercase">Product Categories</h2>
+    </div>
+  </div>
+</div>
+
+<%= render './about_header' %>
+
+<div class="container">      
+  <div class="row text-center">
+
+    <% if user_signed_in? %>
+      <div class="row text-center">
+        <%= link_to "Create New Category", new_category_path, class: 'btn btn-success' %>
+      </div>
+      <br/><br/>
+    <% end %>
+
+    <% @categories.each do |category| %>
+      <%= link_to category do %>
+        <h2><%= category.name %></h2>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<br/><br/>

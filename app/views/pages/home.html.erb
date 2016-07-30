@@ -1,48 +1,29 @@
 <div id="tf-sliders">
-  <div class="container"><!-- Container -->
+  <div class="container">
     <div id="header-slider" class="carousel slide layout-two" data-ride="carousel">
-
-      <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
+
+          <!-- Homepage Image -->
           <%= image_tag("lipstick-girl.jpeg") %>
-          
-          <!-- <div class="carousel-caption hidden-xs"> -->
-            <!-- <div class="search-caption">Search Cosmetics</div> -->
-              <!-- form tag -->
-                <!-- <div class="input-group"> -->
-                  <!-- search tag -->
-                  <!-- <div class="input-group-btn"> -->
-                    <!-- submit -->
-                  <!-- </div> -->
-                <!-- </div> -->
-              <!-- end form tag -->
-            <!-- </div> -->
-          <!-- </div> -->
 
-          <%= link_to reviews_path do %>
-            <div class="row nomargin">
-              <div class="col-md-6 nopadding">
-                <div class="thumb-block c2" data-target="#header-slider" data-slide-to="1">
-                  <h5>Luxury Eco-Friendly Cosmetics</h5>
-
-                  <hr>
-
-                </div>
-              </div>
-            </div>
-          <% end %>
-
-          <%= link_to posts_path do %>
+          <!-- Categories Link -->
+          <div class="row nomargin">
             <div class="col-md-6 nopadding">
-              <div class="thumb-block c3" data-target="#header-slider" data-slide-to="2">
-                <h5>Blog</h5>
-
+              <div class="thumb-block c2">
+                <h5><%= link_to 'Luxury Eco-Friendly Cosmetics', categories_path %></h5>
                 <hr>
-
               </div>
             </div>
-          <% end %>
+          </div>
+
+          <!-- Blog Link -->
+          <div class="col-md-6 nopadding">
+            <div class="thumb-block c3">
+              <h5><%= link_to 'Blog', posts_path %></h5>
+              <hr>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -50,6 +31,7 @@
   </div>
 </div>
 
+<!-- About Link -->
 <div id="vlamorous-content">
   <div class="container">
     <div class="row">
@@ -77,74 +59,13 @@
   </div>
 </div>
   
-<!-- FEATURED BLOG POST -->
 <div id="tf-content" class="layout-two">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 blog-post post-detail">
-        
-        <!--Date of Review-->
-        <a href="achives.html" class="meta-date">
-          <span class="bolder">
-            <%= @featured_post.created_at.strftime("%d") %>
-          </span>
-          <%= @featured_post.created_at.strftime("%b") %>
-        </a>
-        
-        <!--Review Title-->
-        <h2><%= link_to @featured_post.title, @featured_post %></h2>
+  
+  <!-- FEATURED BLOG POST -->
+  <%= render 'featured_post', featured_post: @featured_post %>
 
-
-        <div class="img-wrap">
-          <!--Review Tag Lines-->
-          <div class="metas">
-            <a href="#" class="meta-author"><%= @featured_post.topic %></a>
-            <a href="#" class="meta-cat"><%= @featured_post.city %></a>
-          </div>
-          
-          <!-- Review Image -->
-          <%= link_to(image_tag(@featured_post.image, class: "img-responsive"), @featured_post) if @featured_post.image? %>
-        </div>
-            
-        <!--Product Shop and Address-->
-        <h5 class="text-center"><em> Reviewed from <%= @featured_post.city %>,
-        <%= @featured_post.country %>.</em></h5>
-
-        <hr>
-            
-        <!--Product Review Body-->
-        <div class="post-content">
-          <%= truncate(@featured_post.body, length: 400) %>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Sidebar and Widgets -->
-  <div class="col-md-4">
-    <div class="sidebar">
-    </div>
-
-    <div class="widget recent">
-      <h4>Recent Reviews</h4>
-      
-      <div class="widget-wrap">
-        <% @reviews.each do |review| %>
-          <div class="thumb-post">
-            <%= link_to review do %>
-              <div class="info">
-                <h3 class="media-heading"><%= review.title %></h3>
-
-                <%= image_tag(review.image, class: "img-responsive") %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-
-    </div>
-  </div>
+  <!-- Sidebar -->
+  <%= render 'sidebar', reviews: @reviews %>
 
 </div>
     

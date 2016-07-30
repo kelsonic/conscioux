@@ -1,0 +1,21 @@
+<!--Date of Review-->
+<a href="achives.html" class="meta-date">
+  <span class="bolder"><%= post.created_at.strftime("%d") %></span>
+  <%= post.created_at.strftime("%b") %>
+</a>
+
+<!--Review Title-->
+<h2><%= link_to post.title, post_path(post) %></h2>
+
+<!--Review Image and Tag Lines-->
+<div class="img-wrap">
+  <div class="metas">
+    <a href="#" class="meta-author"><%= post.topic %></a>
+    <a href="#" class="meta-cat"><%= post.city %></a>
+  </div>
+  <%= link_to image_tag(post.image, class: "img-responsive"), post_path(post) %>
+</div>
+
+<!--Product Shop and Address-->
+<h5 class="text-center">Reviewed from <%= post.city %>, <%= post.country %>.</h5>
+<hr>
