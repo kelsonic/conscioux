@@ -65,7 +65,7 @@ Product.all.each do |product|
 		product_id: product.id,
 		title: "#{product.name} is incredible!",
 		body: ("Finding #{product.name} is like finding a #{Faker::Pokemon.name} in #{Faker::Pokemon.location}! #{Faker::Hacker.adjective.capitalize}! " * 60),
-		rating: rand(0.0..5),
+		rating: rand(0..5),
 		store: Faker::Company.name,
 		city: Faker::Address.city,
 		country: Faker::Address.country,
