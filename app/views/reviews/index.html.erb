@@ -13,7 +13,7 @@
     <div class="col-md-10 col-md-offset-1"> <!-- Left Content for Blog Posts -->
     
       <% if user_signed_in? %>
-        <%= link_to 'Write New Review', new_cosmetics_review_path, class: 'btn btn-default btn-block tf-btn color' %>
+        <%= link_to 'Write New Review', new_category_product_review_path, class: 'btn btn-default btn-block tf-btn color' %>
       <% end %>
       <div class="post-block"> <!-- Post #1-->
         <div class="post-detail">
@@ -35,7 +35,7 @@
 
 <div class="container">      
   <div class="row">
-    <% @cosmetics_reviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <%= link_to review do %>
       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <div class="cosmetics-review">
