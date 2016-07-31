@@ -6,8 +6,8 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
 
-  resources :categories do
-    resources :products, except: [:index] do
+  resources :categories, except: [:destroy] do
+    resources :products, except: [:index, :destroy] do
       resources :reviews
     end
   end
