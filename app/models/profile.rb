@@ -6,9 +6,9 @@ class Profile < ActiveRecord::Base
   # Validations
   validates :first_name, presence: true, length: {maximum: 50}
   validates :last_name, presence: true, length: {maximum: 100}
-  validates :city, presence: true, format: {with: /[^0-9!@#$%^&*()]+/, message: 'No special characters'}, length: {maximum: 200}
-  validates :country, presence: true, format: {with: /[^0-9!@#$%^&*()]+/, message: 'No special characters'}, length: {maximum: 200}
-  validates :bio, presence: true, length: {maximum: 1000}
+  validates :city, presence: true, length: { maximum: 200 }
+  validates :country, presence: true, length: { maximum: 200 }
+  validates :bio, presence: true, length: {maximum: 500}
   validates :image, length: { maximum: 100 }
 
 end
