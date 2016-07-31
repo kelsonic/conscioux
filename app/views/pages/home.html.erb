@@ -8,12 +8,11 @@
           <%= image_tag("lipstick-girl.jpeg") %>
 
           <!-- Categories Link -->
-          <div class="row nomargin">
-            <div class="col-md-6 nopadding">
-              <div class="thumb-block c2">
-                <h5><%= link_to 'Luxury Eco-Friendly Cosmetics', categories_path %></h5>
-                <hr>
-              </div>
+
+          <div class="col-md-6 nopadding">
+            <div class="thumb-block c2">
+              <h5><%= link_to 'Luxury Eco-Friendly Cosmetics', categories_path %></h5>
+              <hr>
             </div>
           </div>
 
@@ -60,12 +59,14 @@
 </div>
   
 <div id="tf-content" class="layout-two">
-  
-  <!-- FEATURED BLOG POST -->
-  <%= render 'featured_post', featured_post: @featured_post %>
+  <div class="container">
+    <div class="row">
+      <!-- FEATURED BLOG POST -->
+      <%= render 'featured_post', featured_post: @featured_post %>
 
-  <!-- Sidebar -->
-  <%= render 'sidebar', reviews: @reviews %>
-
+      <!-- Sidebar -->
+      <%= render 'sidebar', reviews: @reviews %>
+    </div>
+  </div>
 </div>
     
