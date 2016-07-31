@@ -19,6 +19,9 @@
       <h5><%= @product.brand %></h5>
 
       <% if user_signed_in? %>
+        <%= link_to "Edit Product", edit_category_product_path(@product.category, @product), class: 'btn btn-warning' %>
+        <%= link_to "Remove Product", category_product_path(@product.category, @product), method: :delete, class: 'btn btn-danger' %>
+        <br/><br/>
         <%= link_to 'Write New Review', new_category_product_review_path(@product.category, @product), class: 'btn btn-success' %>
         <br/><br/>
       <% end %>

@@ -35,11 +35,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def destroy
-    @category.destroy
-    redirect_to categories_path, notice: 'Category was destroyed successfully.'
-  end
-
   private
 
     def set_category

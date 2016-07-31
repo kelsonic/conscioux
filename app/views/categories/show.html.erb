@@ -16,6 +16,8 @@
   
     <% if user_signed_in? %>
       <div class="text-center">
+        <%= link_to "Edit Category Name", edit_category_path(@category), class: 'btn btn-warning' %>
+        <br/><br/>
         <%= link_to "New Product for #{@category.name} Category", new_category_product_path(@category), class: 'btn btn-success' %>
       </div>
       <br/><br/>
@@ -34,7 +36,6 @@
               <h3 class="text-center"><%= product.name %></h3>
               <ul class="cosmetics-review-index-ul text-center"><li>Brand: <%= product.brand %></li>
                 <li>Price: €<%= product.price %> per <%= product.quantity %></li>
-                <li>Rating: ...</li>
               </ul>
             </div>
 
