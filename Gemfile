@@ -13,14 +13,23 @@ gem 'sdoc', '0.4.0', group: :doc
 gem 'will_paginate'
 gem 'font-awesome-sass', '~> 4.6.2'
 
+group :development do
+  gem 'web-console', '~> 2.0'
+end
+
+group :test do
+  gem 'shoulda'
+end
 
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'faker', '~> 1.6.6'
   gem 'rubocop'
+  # Testing
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :production do
