@@ -1,65 +1,157 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Conscioux</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    <title>Conscioux</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style type="text/css">
+        body {
+          height: 100%;
+          overflow: hidden;
+        }
+        .layout {
+          width: 620px;
+          margin: auto;
+        }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+        .cell {
+          width: 320px;
+        }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+    </style>
 </head>
-
 <body>
-  <div class="dialog">
-    <div>
-      <h1>Oops! This page doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved. <a href="http://conscioux.com" alt="Conscioux">Try going to our homepage, instead.</a></p>
+    <div class="layout">
+        <h1>Oops, this page was not found.. </h1>
+        <h3>The page you requested may have been moved or deleted.</h3>
+
+        <h3><a href="http://www.conscioux.com">Get right back on track!</a></h3>
+
+        <div id="freewall" class="free-wall"></div>
     </div>
-  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/freewall/1.0.5/freewall.min.js"></script>
+
+    <script type="text/javascript">
+      var temp = "<div class='cell' style='width:{width}px; height: {height}px; background-color: {color}'><div class='cover'></div></div>";
+      var colour = [
+        "#DAA520",
+        "#CD950C",
+        "#EEB422",
+        "#CD9B1D"
+      ];
+
+      var w = 1, h = 1, html = '', color = '', limitItem = 244;
+      for (var i = 0; i < limitItem; ++i) {
+        h = 1 + 3 * Math.random() << 0;
+        w = 1 + 3 * Math.random() << 0;
+        color = colour[colour.length * Math.random() << 0];
+        html += temp.replace(/\{height\}/g, h*15).replace(/\{width\}/g, w*15).replace("{color}", color);
+      }
+      $("#freewall").html(html);
+
+      var wall = new Freewall("#freewall");
+      wall.reset({
+        selector: '.cell',
+        animate: true,
+        delay: 20,
+        cellW: 15.5,
+        cellH: 15,
+        gutterX: 2,
+        gutterY: 2,
+        onBlockActive: function(block, setting) {
+          // check for showing brick;
+          if (block != null) {
+            $(this).css({
+              top: 3000,
+              left: block.left
+            });
+          } else {
+            $(this).css({
+              opacity: 0
+            });
+          }
+        },
+        onComplete: function(item, setting) {
+          console.log(wall);
+          console.log(setting);
+        }
+      });
+
+      wall.setHoles([
+        // 4
+        {
+          top: 6,
+          left: 6,
+          width: 2,
+          height: 8
+        },
+        {
+          top: 14,
+          left: 6,
+          width: 8,
+          height: 2
+        },
+        {
+          top: 12,
+          left: 10,
+          width: 2,
+          height: 6
+        }
+      ]);
+
+      // 0
+      wall.appendHoles([
+        {
+          top: 6,
+          left: 16,
+          width: 8,
+          height: 2
+        },
+        {
+          top: 8,
+          left: 16,
+          width: 2,
+          height: 8
+        },
+        {
+          top: 8,
+          left: 22,
+          width: 2,
+          height: 8
+        },
+        {
+          top: 16,
+          left: 16,
+          width: 8,
+          height: 2
+        }
+      ]);
+
+      // 4
+      wall.appendHoles([
+        {
+          top: 6,
+          left: 26,
+          width: 2,
+          height: 8
+        },
+        {
+          top: 14,
+          left: 26,
+          width: 8,
+          height: 2
+        },
+        {
+          top: 12,
+          left: 30,
+          width: 2,
+          height: 6
+        }
+      ]);
+
+      wall.fitWidth();
+
+    </script>
 </body>
 </html>
