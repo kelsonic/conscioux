@@ -7,7 +7,7 @@ class Review < ActiveRecord::Base
   # Validations
   validates :title, presence: true, length: {maximum: 100}
   validates :body, presence: true, length: {minimum: 50}
-  validates :rating, presence: true, numericality: {only_integer: false}
+  validates :rating, presence: true, numericality: {only_integer: true}
   validates :video, length: {maximum: 500}
   validates :image, length: { maximum: 100 }
   
