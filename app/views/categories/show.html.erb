@@ -26,14 +26,14 @@
         <div class="col-sm-4 with-padding">
           <div class="cosmetics-review">
             
-            <div class="hidden-xs text-center">
+            <div class="text-center">
               <%= image_tag(product.image, height: 200, class: "stretch-div-img") %>
             </div>
 
             <div class="cosmetics-review-index">
               <h3 class="text-center"><%= product.name %></h3>
-              <ul class="cosmetics-review-index-ul text-center"><li>Brand: <%= product.brand %></li>
-                <li>Price: €<%= product.price %> per <%= product.quantity %></li>
+              <ul class="cosmetics-review-index-ul text-center"><li><%= product.brand %></li>
+                <li>€<%= product.price %> per <%= product.quantity %></li>
               </ul>
             </div>
 
@@ -41,5 +41,6 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
 </div>
