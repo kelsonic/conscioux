@@ -10,32 +10,30 @@
 
 <%= render './about_header' %>
 
-
 <div class="container">      
   <div class="row">
   
     <% if user_signed_in? %>
       <div class="text-center">
-        <%= link_to "Edit Category Name", edit_category_path(@category), class: 'btn btn-warning' %>
-        <br/><br/>
-        <%= link_to "New Product for #{@category.name} Category", new_category_product_path(@category), class: 'btn btn-success' %>
+        <%= link_to "Edit Category Name", edit_category_path(@category), class: 'edit-btn' %>
+        <%= link_to "New Product for category: #{@category.name}", new_category_product_path(@category), class: 'new-btn' %>
       </div>
       <br/><br/>
     <% end %>
 
     <% @category.products.each do |product| %>
       <%= link_to category_product_path(@category, product) do %>
-        <div class="col-sm-4">
+        <div class="col-sm-4 with-padding">
           <div class="cosmetics-review">
             
-            <div class="hidden-xs text-center">
+            <div class="text-center">
               <%= image_tag(product.image, height: 200, class: "stretch-div-img") %>
             </div>
 
             <div class="cosmetics-review-index">
               <h3 class="text-center"><%= product.name %></h3>
-              <ul class="cosmetics-review-index-ul text-center"><li>Brand: <%= product.brand %></li>
-                <li>Price: €<%= product.price %> per <%= product.quantity %></li>
+              <ul class="cosmetics-review-index-ul text-center"><li><%= product.brand %></li>
+                <li>€<%= product.price %> per <%= product.quantity %></li>
               </ul>
             </div>
 
@@ -43,5 +41,6 @@
         </div>
       <% end %>
     <% end %>
+
   </div>
 </div>

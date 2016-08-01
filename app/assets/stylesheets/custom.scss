@@ -18,6 +18,10 @@
   background-color: white !important;
 }
 
+.white-text {
+  color: white;
+}
+
 hr {
   border-color: #BE834A;
   width: 150px;
@@ -129,30 +133,6 @@ hr {
   border: 2px solid #BE834A;
 }
 
-// Code below for the cosmetics reviews index page
-.cosmetics-review {
-  background: #333031;
-  border: 2px solid #be834a;
-  min-height: 190px;
-  font-size: 16px;
-}
-
-.cosmetics-review-index {
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  color: white;
-}
-
-.cosmetics-review:hover {
-  background: black;
-}
-
-.cosmetics-review-index-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
 img {
   vertical-align: middle;
   max-width: 100%;
@@ -185,6 +165,144 @@ img {
 
 .dropdown-menu a {
   &:hover {
-    color: white !important;
+    color: black !important;
   }
+}
+
+.new-btn {
+  text-transform: uppercase;
+  background-color: #43a047;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0;
+  padding: 7px 35px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+.new-btn:hover{
+  color: white;
+  background-color: #2e7d32;
+}
+
+.edit-btn {
+  text-transform: uppercase;
+  background-color: #0288d1;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0;
+  padding: 7px 35px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+.edit-btn:hover{
+  color: white;
+  background-color: #0d47a1;
+}
+
+.delete-btn {
+  text-transform: uppercase;
+  background-color: #d32f2f;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0;
+  padding: 7px 35px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+.delete-btn:hover{
+  color: white;
+  background-color: #b71c1c;
+}
+
+.with-padding {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 2px;
+}
+
+.back-btn {
+  text-transform: uppercase;
+  background-color: #BE834A;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 0;
+  padding: 7px 35px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: block;
+  width: 30%;
+  margin-bottom: 0;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+.back-btn:hover{
+  color: white;
+  background-color: #6d4c41;
+}
+
+.row.text-center.padding-top {
+  padding-top: 70px;
+}
+
+.sign-in {
+  padding-top: 40px;
 }

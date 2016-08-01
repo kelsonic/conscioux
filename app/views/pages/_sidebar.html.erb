@@ -1,23 +1,21 @@
 <div class="col-md-4">
   <div class="sidebar">
-  </div>
+    <div class="widget recent">
+      <h4>Recent Reviews</h4>
+      
+      <div class="widget-wrap">
+        <% reviews.each do |review| %>
+          <div class="thumb-post">
+            <%= link_to category_product_review_path(category_id: review.product.category.id, product_id: review.product.id, id: review.id) do %>
+              <div class="info">
+                <h3 class="media-heading"><%= review.title %></h3>
 
-  <div class="widget recent">
-    <h4>Recent Reviews</h4>
-    
-    <div class="widget-wrap">
-      <% reviews.each do |review| %>
-        <div class="thumb-post">
-          <%= link_to category_product_review_path(category_id: review.product.category.id, product_id: review.product.id, id: review.id) do %>
-            <div class="info">
-              <h3 class="media-heading"><%= review.title %></h3>
-
-              <%= image_tag(review.image, class: "img-responsive") %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+                <%= image_tag(review.image, class: "img-responsive") %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
   </div>
 </div>
