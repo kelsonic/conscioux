@@ -1,33 +1,328 @@
-# Config
-gender = ['Male', 'Female']
-
-
-# CREATE CATEGORIES AND PRODUCTS
-product_images = ['Conditioner1.jpg', 'cream.jpg', 'cream2.jpg', 'cream3.jpg', 'cream4.jpg', 'lipgloss.jpg', 'mascara2.jpg', 'mascara3.jpg', 'test-eco-image.jpg']
-product_names = ['Facial Cream', 'Body Lotion', 'Bath Oil', 'Shampoo', 'Hair Oil', 'Hair Spray', 'Mascara', 'Foundation', 'Concealer', 'Powder', 'Eye Shadow', 'Eyebrow Makeup', 'Conditioner', 'Lipstick', 'Lipgloss', 'Eye Liner', 'Nail Polish', 'Bronzer', 'BB Creme', 'Hand Creme', 'Body Oil']
 post_topics = ['Yoga', 'Restaurant', 'Shop', 'Diet', 'Workout', 'Bar']
 
-categories = ['Makeup', 'Hair', 'Body & Bath']
+# CREATE MAKEUP CATEGORY AND PRODUCTS
+category = Category.create!(name: 'Makeup')
 
-categories.each do |category|
-	# Create Categories
-	new_category = Category.create!(name: category)
-	
-	# Create 12 Products per Category
-	12.times do
-		new_category.products.create!(
-			name: product_names.sample,
-			brand: Faker::Company.name,
-			gender: gender.sample,
-			website: Faker::Internet.url,
-			image: product_images.sample,
-			price: rand(19.99..50).round(2).to_s,
-			quantity: "#{rand(25..150)}ml"
-		)
-	end
-end
-# END CATEGORIES AND PRODUCTS
+# Product Name
+category.products.create!(
+	name: 'Timide',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/bronzer.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
 
+# Product Name
+category.products.create!(
+	name: 'Super Mascara',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/mascara1.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Lushy Lashes',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/mascara2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Crazy Lashes',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/mascara3.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'True Rouge',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/blush.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Kissy Lips',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/lipgloss.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Red Romance',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/lipstick.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Kusjes',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/lipstick2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Flawless',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/foundation.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Natural Look',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/foundation2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Au Naturelle',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/makeup/foundation3.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+
+# CREATE BATH & BODY CATEGORY AND PRODUCTS
+category = Category.create!(name: 'Body and Bath')
+# Product Name
+category.products.create!(
+	name: 'De Bain',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/bathball.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Badzout',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/bathsalt.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+category.products.create!(
+	name: 'White Pleasure',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/body.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+category.products.create!(
+	name: 'Badspulletje',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/bathsalt2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+category.products.create!(
+	name: 'Creme Deluxe',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/cream.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+category.products.create!(
+	name: 'Corporel',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/cream2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+category.products.create!(
+	name: 'Youth Restorer',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/cream3.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+
+category.products.create!(
+	name: 'Reinvigoration',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/cream4.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+
+category.products.create!(
+	name: 'Creme du Jour',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/bodybath/test-eco-image.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# CREATE BATH & BODY CATEGORY AND PRODUCTS
+category = Category.create!(name: 'Hair')
+# Product Name
+category.products.create!(
+	name: 'Après-Shampooing',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/conditioner.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Volumizer',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/Conditioner1.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Lush Hair',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/conditioner4.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Super Hair Oil',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/hairoil.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Tropical Oil',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/hairoil2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Fountain of Hair Youth',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/hairoil3.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'So Fresh So Clean',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/shampoo.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+
+# Product Name
+category.products.create!(
+	name: 'Fresh Prince',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/shampoo2.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+
+# Product Name
+category.products.create!(
+	name: 'Handmade Shampoo',
+	brand: Faker::Company.name,
+	gender: 'Female',
+	website: Faker::Internet.url,
+	image: 'seed_images/products/hair/shampoo3.jpg',
+	price: rand(19.99..50).round(2).to_s,
+	quantity: "#{rand(25..150)}ml"
+)
+# END CATEGORIES
 
 
 # CREATE USERS, POSTS, AND REVIEWS
@@ -48,29 +343,64 @@ profile = Profile.create!(
 user.profile = profile
 
 user.posts.create!(
-	title: "This lipstick makes you feel like #{Faker::Space.star}!",
-	topic: post_topics.sample,
+	title: "Should be on your bucket list!!",
+	topic: "Farmers Market",
 	city: Faker::Address.city,
 	country: Faker::Address.country,
-	body: ("This lipstick ensures that it won't hurt any #{Faker::Pokemon.name}s or #{Faker::Pokemon.name}s. " * 60),
-	takeaways: "#{Faker::Pokemon.name}s are important, and so is lipstick.",
+	body: ("<p>#{Faker::Lorem.paragraph(20)}</p>" * 5),
+	takeaways: ("<p>#{Faker::Lorem.paragraph(1)}</p>" * 1),
 	interviewed_people: '#{Faker::Pokemon.name}',
-	image: product_images.sample,
-	video: 'https://www.youtube.com/watch?v=OIfLyMSuAMA'
+	image: 'seed_images/posts/post1-compressor.jpeg',
+	video: 'https://www.youtube.com/watch?v=XMOuVve3Aqg'
 )
 
+user.posts.create!(
+	title: "Luxury Vegan Restaurant",
+	topic: "Restaurant",
+	city: Faker::Address.city,
+	country: Faker::Address.country,
+	body: ("<p>#{Faker::Lorem.paragraph(20)}</p>" * 5),
+	takeaways: ("<p>#{Faker::Lorem.paragraph(1)}</p>" * 1),
+	interviewed_people: '#{Faker::Pokemon.name}',
+	image: 'seed_images/posts/post2-compressor.jpeg',
+	video: 'https://www.youtube.com/watch?v=XMOuVve3Aqg'
+)
+
+user.posts.create!(
+	title: "Yoga in Paradise!",
+	topic: "Yoga",
+	city: Faker::Address.city,
+	country: Faker::Address.country,
+	body: ("<p>#{Faker::Lorem.paragraph(20)}</p>" * 5),
+	takeaways: ("<p>#{Faker::Lorem.paragraph(1)}</p>" * 1),
+	interviewed_people: '#{Faker::Pokemon.name}',
+	image: 'seed_images/posts/post3-compressor.jpeg',
+	video: 'https://www.youtube.com/watch?v=XMOuVve3Aqg'
+)
+
+user.posts.create!(
+	title: "Exclusive Festivals",
+	topic: "Festivals",
+	city: Faker::Address.city,
+	country: Faker::Address.country,
+	body: ("<p>#{Faker::Lorem.paragraph(20)}</p>" * 5),
+	takeaways: ("<p>#{Faker::Lorem.paragraph(1)}</p>" * 1),
+	interviewed_people: '#{Faker::Pokemon.name}',
+	image: 'seed_images/posts/post4-compressor.jpeg',
+	video: 'https://www.youtube.com/watch?v=XMOuVve3Aqg'
+)
 
 Product.all.each do |product|
 	user.reviews.create!(
 		product_id: product.id,
 		title: "#{product.name} is incredible!",
-		body: ("Finding #{product.name} is like finding a #{Faker::Pokemon.name} in #{Faker::Pokemon.location}! #{Faker::Hacker.adjective.capitalize}! " * 60),
+		body: ("<p>#{Faker::Lorem.paragraph(15)}</p>" * 5),
 		rating: rand(0..5),
 		store: Faker::Company.name,
 		city: Faker::Address.city,
 		country: Faker::Address.country,
-		image: product_images.sample,
-		video: 'https://www.youtube.com/watch?v=OIfLyMSuAMA'
+		image: product.image,
+		video: 'https://www.youtube.com/watch?v=XMOuVve3Aqg'
 	)
 end
 # END USERS
