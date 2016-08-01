@@ -28,6 +28,13 @@ RSpec.describe Review, type: :model do
     end
   end
 
+  describe 'its takeaways' do
+    it do
+      should validate_presence_of(:takeaways)
+      should validate_length_of(:takeaways).is_at_most(300)
+    end
+  end
+
   describe 'its video' do
     it do
       should validate_length_of(:video).is_at_most(500)
