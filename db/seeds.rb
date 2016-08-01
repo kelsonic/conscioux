@@ -384,7 +384,7 @@ user.posts.create!(
 	city: Faker::Address.city,
 	country: Faker::Address.country,
 	body: ("<p>#{Faker::Lorem.paragraph(20)}</p>" * 5),
-	takeaways: ("<p>#{Faker::Lorem.paragraph(1)}</p>" * 1),
+	takeaways: Faker::Lorem.paragraph(4) * 1,
 	interviewed_people: '#{Faker::Pokemon.name}',
 	image: 'seed_images/posts/post4-compressor.jpeg',
 	video: 'https://www.youtube.com/watch?v=XMOuVve3Aqg'
