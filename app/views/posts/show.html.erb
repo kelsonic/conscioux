@@ -53,9 +53,9 @@
           <div class="widget recent">
             <h4>Recent Posts</h4>
             <div class="widget-wrap">
-              <% @posts.each do |post| %>
+              <% @featured_posts.each do |post| %>
                 <div class="thumb-post">
-                  <%= link_to post_path(@post) do %>
+                  <%= link_to post_path(post) do %>
                     <div class="info">
                       <h3 class="media-heading"><%= post.title %></h3>
                        <%= image_tag(post.image, class: "img-responsive") %>

@@ -10,6 +10,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :store
       t.string :city
       t.string :country
+      t.string :takeaways
       t.string :image
       t.string :video
 

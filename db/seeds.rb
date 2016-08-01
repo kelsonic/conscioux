@@ -395,6 +395,7 @@ Product.all.each do |product|
 		product_id: product.id,
 		title: "#{product.name} is incredible!",
 		body: ("<p>#{Faker::Lorem.paragraph(15)}</p>" * 5),
+		takeaways: Faker::Lorem.paragraph(4) * 1,
 		rating: rand(0..5),
 		store: Faker::Company.name,
 		city: Faker::Address.city,
