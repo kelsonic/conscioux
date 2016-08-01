@@ -43,7 +43,8 @@ RSpec.describe Post, type: :model do
 
   describe 'its takeaways' do
     it do
-      should validate_length_of(:takeaways).is_at_most(500)
+      should validate_presence_of(:takeaways)
+      should validate_length_of(:takeaways).is_at_most(300)
     end
   end
 

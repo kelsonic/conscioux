@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   validates :country, presence: true, length: { maximum: 200 }
   validates :title, presence: true, length: { maximum: 150 }
   validates :body, presence: true, length: { maximum: 5000 }
-  validates :takeaways, length: { maximum: 500 }
+  validates :takeaways, presence: true, length: { maximum: 300 }
   validates :interviewed_people, length: { maximum: 1000 }
   validates :video, length: { maximum: 500 }
   validates :image, length: { maximum: 100 }

@@ -10,6 +10,7 @@
 <div id="tf-content" class="layout-two">
   <div class="container">
     <div class="row">
+
       <div class="col-md-8">
         <div class="blog-post">
           <div class="post-detail">
@@ -30,43 +31,43 @@
                 </div>
               <% end %>
             </h5>
-
           </div>
+
+          <!-- Edit and Delete Buttons -->
+          <% if user_signed_in? && (current_user == @post.user) %>| 
+            <%= link_to "Edit this Post", edit_post_path(@post), class: "edit-btn" %> |
+            <%= link_to "Delete this Post", post_path, method: :delete, 
+                                                data: { confirm: "Are you sure you want to delete this post?" }, 
+                                                class: "delete-btn" %>
+          <% end %>
         
-          <!--Author Information-->
-          <div class="author-box">
-            <div class="media text-center">
-              
-              <!-- User Image -->
-              <div class="col-md-12">
-                <%= link_to image_tag(@post.user.profile.image, width: 150, height: 150, class: "img-responsive"), profile_path(@post.user.profile) %>
-              </div>
-
-              <!-- User Name and Bio -->
-              <div class="col-md-8">
-                <div class="media-body">
-                  <h4 class="media-heading">Created by <%= @post.user.profile.first_name %></h4>
-                  <p><%= @post.user.profile.bio %></p>
-                </div> 
-              </div>
-              
-              <!-- Edit and Delete Buttons -->
-              <% if user_signed_in? && (current_user == @post.user) %>| 
-                <%= link_to "Edit this Post", edit_post_path(@post), class: "edit-btn" %> |
-                <%= link_to "Delete this Post", post_path, method: :delete, 
-                                                    data: { confirm: "Are you sure you want to delete this post?" }, 
-                                                    class: "delete-btn" %>
-              <% end %>
-
-            </div>
-          </div>
-        
-          <div class="text-center">    
-            <%= link_to "Back to Blog Articles", posts_path, class: "btn btn-block tf-btn center" %> 
-          </div>
 
         </div>
+          <div class="text-center">    
+            <%= link_to "Back to All Posts", posts_path, class: 'btn btn-default btn-block tf-btn color' %> 
+          </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="sidebar">
+          <div class="widget recent">
+            <h4>Recent Posts</h4>
+            <div class="widget-wrap">
+              <% @featured_posts.each do |post| %>
+                <div class="thumb-post">
+                  <%= link_to post_path(post) do %>
+                    <div class="info">
+                      <h3 class="media-heading"><%= post.title %></h3>
+                       <%= image_tag(post.image, class: "img-responsive") %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

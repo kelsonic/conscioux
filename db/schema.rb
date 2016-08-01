@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20160728160618) do
     t.string   "store"
     t.string   "city"
     t.string   "country"
+    t.string   "takeaways"
     t.string   "image"
     t.string   "video"
     t.datetime "created_at", null: false

@@ -16,6 +16,15 @@
   <%= link_to image_tag(post.image, class: "img-responsive"), post_path(post) %>
 </div>
 
+<!-- Author Information -->
+<div class="author-box">
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">Written by <%= link_to "#{post.user.profile.first_name} #{post.user.profile.last_name}", profile_path(post.user.profile) %></h4>
+    </div>
+  </div>
+</div>
+
 <!--Product Shop and Address-->
 <h5 class="text-center">Reviewed from <%= post.city %>, <%= post.country %>.</h5>
 <hr>
