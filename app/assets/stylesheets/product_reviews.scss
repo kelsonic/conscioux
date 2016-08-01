@@ -26,7 +26,7 @@
 }
 
 .product-review-index {
-  padding-bottom: 100px;
+  padding-bottom: 130px;
 }
 
 //Product reviews
@@ -34,12 +34,28 @@
   padding-bottom: 40px;
 }
 
-.cosmetics-review-index-ul.text-center {
+.padded {
+  margin-top: 20px;
+  color: black;
+  font-size: 16px;
+}
+
+.highlighted-specs {
   color: black !important;
+  font-size: 16px;
+  background-color: #eeeeee;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+  max-width: 50%;
+  margin: 0 auto; 
 }
 
 @media screen and (max-width: 990px) {
   .product-review-index {
     padding-bottom: 10px;
   }
+}
+
+.black-text {
+  color: black;
 }

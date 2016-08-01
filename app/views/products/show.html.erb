@@ -1,9 +1,10 @@
 <div class="row text-center">
   <div id="tf-page-header" class="text-center">
     <div class="container">
-      <h5><em>Exclusive and Eco-friendly</em></h5>
+      <h5><em>Reviews for:</em></h5>
       <hr>
-      <h2 class="text-uppercase"><%= @product.category.name %> Products</h2>
+      <h2 class="text-uppercase"><%= @product.name %></h2>
+      <h2 class="text-uppercase"><%= @product.brand %></h2>
     </div>
   </div>
 </div>
@@ -12,11 +13,9 @@
 
 <div class="container">  
   <div class="row">
+
     <div class="text-center">
       <!-- Product Name and Brand -->
-      <h2><%= @product.name %></h2>
-      <h5><%= @product.brand %></h5>
-
       <% if user_signed_in? %>
         <%= link_to "Edit Product", edit_category_product_path(@product.category, @product), class: 'edit-btn' %>
         <%= link_to "Remove Product", category_product_path(@product.category, @product), method: :delete, class: 'delete-btn' %>
@@ -32,25 +31,27 @@
             <!-- Review Image -->
             <%= link_to image_tag(review.image, height: 200, class: "stretch-div-img"), category_product_review_path(@product.category, @product, review) %>
           
-          <div class="product-review-index">
-            <!-- Review Title -->
-            <h3 class="text-center"><%= review.title %></h3>
-            <ul class="cosmetics-review-index-ul text-center">
-              <!-- Review created by User -->
-              <li>Reviewed by <%= link_to "#{review.user.profile.first_name} #{review.user.profile.last_name} in #{review.city}, #{review.country}", review.user.profile %></li>
-
-              <%= link_to category_product_review_path(@product.category, @product, review) do %>
-                <!-- Review Rating -->
-                <li>Conscioux Rating --- <%= generate_stars(review.rating) %> ---</li>
-                <br/>
-                <li class="padded col-md-8 col-md-offset-2"><%= review.body.truncate(300) %></li>
-
-                <!-- Review Body -->
-                  
-                </div>
-              <% end %>
-            </ul>
-          </div>
+            <div class="product-review-index">
+              <!-- Review Title -->
+              <h3 class="text-center"><%= review.title %></h3>
+              <ul class="cosmetics-review-index-ul text-center">
+                <div class="highlighted-specs">
+                  <!-- Review created by User -->
+                  Reviewed by <%= link_to "#{review.user.profile.first_name} #{review.user.profile.last_name} in #{review.city}, #{review.country}", review.user.profile %>
+                  <br>
+                  <%= link_to category_product_review_path(@product.category, @product, review) do %>
+                    <!-- Review Rating -->
+                    <span class="black-text">--- <%= generate_stars(review.rating) %> ---</span>
+                  </div>
+                  <!-- Review Body -->
+                  <div class="col-md-8 col-md-offset-2 padded">
+                    <%= review.body.truncate(250) %>
+                  </div>
+                    
+                  </div>
+                <% end %>
+              </ul>
+            </div>
 
         </div>
       </div>
