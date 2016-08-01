@@ -700,7 +700,7 @@ ul.list-block li i { margin-right: 10px }
     padding: 10px;
     color: #ffffff;
     text-transform: uppercase;
-    text-align: left;
+    text-align: center;
 }
 /* Related Posts */
 .comment-form,
@@ -805,4 +805,14 @@ p.help-block.text-danger li {
 
 .golden:hover {
     text-decoration: none !important;
+}
+
+.author-box {
+   margin-bottom: 5px !important;
+}
+
+.layout-two .blog-post {
+    color: black;
+    padding-bottom: 5px;
+    margin-bottom: 10px !important;
 }
