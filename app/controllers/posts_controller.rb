@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def show
-    @posts = Post.all
+    @featured_posts = Post.all.shuffle.take(7)
   end
 
   def index
