@@ -4,14 +4,14 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   # Validations
-  validates :topic, presence: true, length: {maximum: 150}
-  validates :city, presence: true, format: {with: /[^0-9!@#$%^&*()]+/, message: 'No special characters'}, length: {maximum: 200}
-  validates :country, presence: true, format: {with: /[^0-9!@#$%^&*()]+/, message: 'No special characters'}, length: {maximum: 200}
-  validates :title, presence: true, length: {maximum: 150}
-  validates :body, presence: true
-  validates :takeaways, length: {maximum: 500}
-  validates :interviewed_people, length: {maximum: 1000}
-  # TODO: video validations
+  validates :topic, presence: true, length: { maximum: 150 }
+  validates :city, presence: true, length: { maximum: 200 }
+  validates :country, presence: true, length: { maximum: 200 }
+  validates :title, presence: true, length: { maximum: 150 }
+  validates :body, presence: true, length: { maximum: 5000 }
+  validates :takeaways, length: { maximum: 500 }
+  validates :interviewed_people, length: { maximum: 1000 }
+  validates :video, length: { maximum: 500 }
   validates :image, length: { maximum: 100 }
   
 end
