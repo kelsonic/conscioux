@@ -1,0 +1,61 @@
+.cosmetics-review {
+  background: white;
+  border: 2px solid #e6e6e6;
+  min-height: 190px;
+  font-size: 16px;
+}
+
+.cosmetics-review-index {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: black;
+}
+
+.cosmetics-review-index:hover {
+  color: #BE834A !important;
+}
+
+.cosmetics-review-index-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-review {
+  border: 2px solid #e6e6e6;
+}
+
+.product-review-index {
+  padding-bottom: 130px;
+}
+
+//Product reviews
+.col-md-8.col-md-offset-2.col-sm-12.text-center {
+  padding-bottom: 40px;
+}
+
+.padded {
+  margin-top: 20px;
+  color: black;
+  font-size: 16px;
+}
+
+.highlighted-specs {
+  color: black !important;
+  font-size: 16px;
+  background-color: #eeeeee;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+  max-width: 50%;
+  margin: 0 auto; 
+}
+
+@media screen and (max-width: 990px) {
+  .product-review-index {
+    padding-bottom: 10px;
+  }
+}
+
+.black-text {
+  color: black;
+}

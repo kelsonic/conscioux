@@ -1,41 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 blog-post post-detail">
-      
-      <!--Date of Review-->
-      <a href="achives.html" class="meta-date">
-        <span class="bolder">
-          <%= featured_post.created_at.strftime("%d") %>
-        </span>
-        <%= featured_post.created_at.strftime("%b") %>
-      </a>
-      
-      <!--Review Title-->
-      <h2><%= link_to featured_post.title, featured_post %></h2>
+<div class="col-md-8 blog-post post-detail">
+  
+  <!--Date of Review-->
+  <a href="achives.html" class="meta-date">
+    <span class="bolder">
+      <%= featured_post.created_at.strftime("%d") %>
+    </span>
+    <%= featured_post.created_at.strftime("%b") %>
+  </a>
+  
+  <!--Review Title-->
+  <h2><%= link_to featured_post.title, featured_post %></h2>
 
 
-      <div class="img-wrap">
-        <!--Review Tag Lines-->
-        <div class="metas">
-          <a href="#" class="meta-author"><%= featured_post.topic %></a>
-          <a href="#" class="meta-cat"><%= featured_post.city %></a>
-        </div>
-        
-        <!-- Review Image -->
-        <%= link_to(image_tag(featured_post.image, class: "img-responsive"), featured_post) if featured_post.image? %>
-      </div>
-          
-      <!--Product Shop and Address-->
-      <h5 class="text-center"><em> Reviewed from <%= featured_post.city %>,
-      <%= featured_post.country %>.</em></h5>
-
-      <hr>
-          
-      <!--Product Review Body-->
-      <div class="post-content">
-        <%= truncate(featured_post.body, length: 400) %>
-      </div>
-
+  <div class="img-wrap">
+    <!--Review Tag Lines-->
+    <div class="metas">
+      <a href="#" class="meta-author"><%= featured_post.topic %></a>
+      <a href="#" class="meta-cat"><%= featured_post.city %></a>
     </div>
+    
+    <!-- Review Image -->
+    <%= link_to(image_tag(featured_post.image, class: "img-responsive"), featured_post) if featured_post.image? %>
   </div>
+      
+  <!--Product Shop and Address-->
+  <h5 class="text-center"><em> Reviewed from <%= featured_post.city %>,
+  <%= featured_post.country %>.</em></h5>
+
+  <hr>
+      
+  <!--Product Review Body-->
+  <div class="post-content">
+    <%= truncate(featured_post.body, length: 400) %>
+  </div>
+
 </div>

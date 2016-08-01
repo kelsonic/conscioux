@@ -11,6 +11,16 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
+
+      <%= link_to "Back to #{@review.product.category.name}", category_path(@review.product.category), class: "back-btn" %>
+
+        <% if user_signed_in? && (current_user == @review.user) %>| 
+              <%= link_to "Edit this Review", edit_category_product_review_path(@review.product.category, @review.product, @review), class: "edit-btn" %> |
+              <%= link_to "Delete this Review", category_product_review_path(@review.product.category, @review.product, @review), method: :delete, 
+                                                  data: { confirm: "Are you sure you want to delete this review?" }, 
+                                                  class: "delete-btn" %>
+            <% end %>
+        <br>
         <div class="blog-post">
           <div class="post-detail">
 
@@ -76,14 +86,6 @@
               </div>
             </div>
 
-            <%= link_to "Back to #{@review.product.category.name}", category_path(@review.product.category), class: "btn btn-xs btn-primary" %>
-
-            <% if user_signed_in? && (current_user == @review.user) %>| 
-              <%= link_to "Edit this Review", edit_category_product_review_path(@review.product.category, @review.product, @review), class: "btn btn-xs btn-warning" %> |
-              <%= link_to "Delete this Review", category_product_review_path(@review.product.category, @review.product, @review), method: :delete, 
-                                                  data: { confirm: "Are you sure you want to delete this review?" }, 
-                                                  class: "btn btn-xs btn-danger" %>
-            <% end %>
           </div>
         </div> 
       </div>
