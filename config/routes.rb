@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about'
   get '/contact', to: 'contacts#new'
+  get '/request-review', to: 'pages#request_review'
 
   resources :contacts, only: [:create]
 
