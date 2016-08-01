@@ -12,8 +12,6 @@
     <div class="row">
       <div class="col-md-8">
 
-      <%= link_to "Back to #{@review.product.category.name}", category_path(@review.product.category), class: "back-btn" %>
-
         <% if user_signed_in? && (current_user == @review.user) %>| 
               <%= link_to "Edit this Review", edit_category_product_review_path(@review.product.category, @review.product, @review), class: "edit-btn" %> |
               <%= link_to "Delete this Review", category_product_review_path(@review.product.category, @review.product, @review), method: :delete, 
@@ -39,6 +37,15 @@
               <%= image_tag(@review.image, class: "img-responsive") if @review.image? %>
             </div>
           </div>
+
+          <!-- Author Information -->
+          <div class="author-box">
+            <div class="media">
+              <div class="media-body">
+                <h4 class="media-heading">Written by <%= link_to "#{@review.user.profile.first_name} #{@review.user.profile.last_name}", profile_path(@review.user) %></h4>
+              </div>
+            </div>
+          </div>
           
           <!--Product Shop and Address-->
           <h5 class="text-center"><em>Bought at <%= @review.store %> in <%= @review.city %>, 
@@ -54,7 +61,6 @@
           <!--Product Price and Company Website-->
           <div class="post-content">
             Approximate Price: <%= @review.product.price %> euros for <%= @review.product.quantity %>.
-             
             <%= link_to @review.product.website do %>
               <p>Website of <%= @review.product.brand %></p>
             <% end %>
@@ -70,24 +76,9 @@
             <% end %>
           </h5>
         </div>
-       
-        <div class="author-box">
-          <div class="media text-center">
-            <div class="col-md-4">
-              <%= link_to profile_path(@review.user) do %>
-                <%= image_tag(@review.user.profile.image, width: 150, height: 150, class: "img-responsive") %>
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <div class="media-body">
-                <h4 class="media-heading">
-                  Reviewed by <%= @review.user.profile.first_name %></h4>
-                <%= @review.user.profile.bio %>
-              </div>
-            </div>
-
-          </div>
-        </div> 
+        <div class="text-center">    
+          <%= link_to "Back to All #{@review.product.category.name} Products", category_path(@review.product.category), class: 'btn btn-default btn-block tf-btn color' %> 
+        </div>
       </div>
 
       <div class="col-md-4">
