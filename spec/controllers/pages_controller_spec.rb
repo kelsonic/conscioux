@@ -20,4 +20,14 @@ RSpec.describe PagesController, type: :controller do
     it { should route(:get, '/about').to(action: :about) }
     it { should render_template('about') }
   end
+
+  describe 'GET #request_review' do
+    before {
+      get :request_review
+    }
+
+    it { should respond_with(200) }
+    it { should route(:get, '/request-review').to(action: :request_review) }
+    it { should render_template('request_review') }
+  end
 end
